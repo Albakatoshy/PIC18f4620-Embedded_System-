@@ -4988,7 +4988,9 @@ typedef enum{
 
 }interrupt_priority_cfg;
 # 16 "./MCAL_layer/Interrupt/mcal_external_interrupt.h" 2
-# 67 "./MCAL_layer/Interrupt/mcal_external_interrupt.h"
+# 68 "./MCAL_layer/Interrupt/mcal_external_interrupt.h"
+typedef void (*InterruptHandler)(void);
+
 typedef enum{
     INTERRUPT_FALLING_EDGE = 0 ,
     INTERRUPT_RISING_EDGE = 1 ,

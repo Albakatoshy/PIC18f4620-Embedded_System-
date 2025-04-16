@@ -9,18 +9,22 @@
 #include "mcal_external_interrupt.h"
 
 
-static void (*INT0_InterruptHandler)(void) = NULL;
-static void (*INT1_InterruptHandler)(void) = NULL;
-static void (*INT2_InterruptHandler)(void) = NULL;
+//static void (*INT0_InterruptHandler)(void) = NULL;
+InterruptHandler INT0_InterruptHandler = NULL;
+InterruptHandler INT1_InterruptHandler = NULL;
+InterruptHandler INT2_InterruptHandler = NULL;
 
-static void (*RB4_InterruptHandler_HIGH)(void) = NULL;
-static void (*RB4_InterruptHandler_LOW)(void) = NULL;
-static void (*RB5_InterruptHandler_HIGH)(void) = NULL;
-static void (*RB5_InterruptHandler_LOW)(void) = NULL;
-static void (*RB6_InterruptHandler_HIGH)(void) = NULL;
-static void (*RB6_InterruptHandler_LOW)(void) = NULL;
-static void (*RB7_InterruptHandler_HIGH)(void) = NULL;
-static void (*RB7_InterruptHandler_LOW)(void) = NULL;
+
+InterruptHandler RB4_InterruptHandler_HIGH = NULL;
+InterruptHandler RB4_InterruptHandler_LOW = NULL;
+InterruptHandler RB5_InterruptHandler_HIGH = NULL;
+InterruptHandler RB5_InterruptHandler_LOW = NULL;
+InterruptHandler RB6_InterruptHandler_HIGH = NULL;
+InterruptHandler RB6_InterruptHandler_LOW = NULL;
+InterruptHandler RB7_InterruptHandler_HIGH = NULL;
+InterruptHandler RB7_InterruptHandler_LOW = NULL;
+
+
 
 
 static Std_ReturnType Interrupt_INTx_Enable(const interrupt_INTx_t *int_obj);

@@ -20,50 +20,53 @@
 #if EXTERNAL_INTERRUPT_INTx_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
 
 /*this macro functions enable and disable INT0 */
-#define EXTERNAL_INTERRUPT_INT0_InterruptEnable()        (INTCONbits.INT0IE=1)
-#define EXTERNAL_INTERRUPT_INT0_InterruptDisable()       (INTCONbits.INT0IE=0)
-#define EXTERNAL_INTERRUPT_INT0_ClearInterruptFlag()       (INTCONbits.INT0IF=0)
-#define EXTERNAL_INTERRUPT_INT0_RisingEdgeSelect()         (INTCON2bits.INTEDG0=1)    
-#define EXTERNAL_INTERRUPT_INT0_FallingEdgeSelect()        (INTCON2bits.INTEDG0=0)    
+#define EXTERNAL_INTERRUPT_INT0_InterruptEnable()           (INTCONbits.INT0IE=1)
+#define EXTERNAL_INTERRUPT_INT0_InterruptDisable()          (INTCONbits.INT0IE=0)
+#define EXTERNAL_INTERRUPT_INT0_ClearInterruptFlag()        (INTCONbits.INT0IF=0)
+#define EXTERNAL_INTERRUPT_INT0_RisingEdgeSelect()          (INTCON2bits.INTEDG0=1)    
+#define EXTERNAL_INTERRUPT_INT0_FallingEdgeSelect()         (INTCON2bits.INTEDG0=0)    
 
-#define EXTERNAL_INTERRUPT_INT1_InterruptEnable()        (INTCON3bits.INT1IE=1)
-#define EXTERNAL_INTERRUPT_INT1_InterruptDisable()       (INTCON3bits.INT1IE=0)  
-#define EXTERNAL_INTERRUPT_INT1_ClearInterruptFlag()       (INTCON3bits.INT1IF=0)
-#define EXTERNAL_INTERRUPT_INT1_RisingEdgeSelect()         (INTCON2bits.INTEDG1=1)    
-#define EXTERNAL_INTERRUPT_INT1_FallingEdgeSelect()        (INTCON2bits.INTEDG1=0)
+#define EXTERNAL_INTERRUPT_INT1_InterruptEnable()           (INTCON3bits.INT1IE=1)
+#define EXTERNAL_INTERRUPT_INT1_InterruptDisable()          (INTCON3bits.INT1IE=0)  
+#define EXTERNAL_INTERRUPT_INT1_ClearInterruptFlag()        (INTCON3bits.INT1IF=0)
+#define EXTERNAL_INTERRUPT_INT1_RisingEdgeSelect()          (INTCON2bits.INTEDG1=1)    
+#define EXTERNAL_INTERRUPT_INT1_FallingEdgeSelect()         (INTCON2bits.INTEDG1=0)
 
-#define EXTERNAL_INTERRUPT_INT2_InterruptEnable()        (INTCON3bits.INT2IE=1)
-#define EXTERNAL_INTERRUPT_INT2_InterruptDisable()       (INTCON3bits.INT2IE=0)  
-#define EXTERNAL_INTERRUPT_INT2_ClearInterruptFlag()       (INTCON3bits.INT2IF=0)
-#define EXTERNAL_INTERRUPT_INT2_RisingEdgeSelect()         (INTCON2bits.INTEDG2=1)    
-#define EXTERNAL_INTERRUPT_INT2_FallingEdgeSelect()        (INTCON2bits.INTEDG2=0)
+#define EXTERNAL_INTERRUPT_INT2_InterruptEnable()           (INTCON3bits.INT2IE=1)
+#define EXTERNAL_INTERRUPT_INT2_InterruptDisable()          (INTCON3bits.INT2IE=0)  
+#define EXTERNAL_INTERRUPT_INT2_ClearInterruptFlag()        (INTCON3bits.INT2IF=0)
+#define EXTERNAL_INTERRUPT_INT2_RisingEdgeSelect()          (INTCON2bits.INTEDG2=1)    
+#define EXTERNAL_INTERRUPT_INT2_FallingEdgeSelect()         (INTCON2bits.INTEDG2=0)
 
 /*this check if the PRIORITY_LEVELS enable or disable*/
 #if INTERRUPT_PRIORITY_LEVELS_ENABLE==INTERRUPT_FEATURE_ENABLE
-#define EXTERNAL_INTERRUPT_INT1_InterruptHighPriority()  (INTCON3bits.INT1IP=1)
-#define EXTERNAL_INTERRUPT_INT1_InterruptLowPriority()   (INTCON3bits.INT1IP=0)
+#define EXTERNAL_INTERRUPT_INT1_InterruptHighPriority()     (INTCON3bits.INT1IP=1)
+#define EXTERNAL_INTERRUPT_INT1_InterruptLowPriority()      (INTCON3bits.INT1IP=0)
 
-#define EXTERNAL_INTERRUPT_INT2_InterruptHighPriority()  (INTCON3bits.INT2IP=1)
-#define EXTERNAL_INTERRUPT_INT2_InterruptLowPriority()   (INTCON3bits.INT2IP=0)
+#define EXTERNAL_INTERRUPT_INT2_InterruptHighPriority()     (INTCON3bits.INT2IP=1)
+#define EXTERNAL_INTERRUPT_INT2_InterruptLowPriority()      (INTCON3bits.INT2IP=0)
 #endif
 
 #endif
 
 #if EXTERNAL_INTERRUPT_OnChange_FEATURE_ENABLE==INTERRUPT_FEATURE_ENABLE
-#define EXTERNAL_INTERRUPT_RBx_InterruptEnable()        (INTCONbits.RBIE=1)
-#define EXTERNAL_INTERRUPT_RBx_InterruptDisable()       (INTCONbits.RBIE=0)
-#define EXTERNAL_INTERRUPT_RBx_ClearInterruptFlag()     (INTCONbits.RBIF=0)    
+#define EXTERNAL_INTERRUPT_RBx_InterruptEnable()            (INTCONbits.RBIE=1)
+#define EXTERNAL_INTERRUPT_RBx_InterruptDisable()           (INTCONbits.RBIE=0)
+#define EXTERNAL_INTERRUPT_RBx_ClearInterruptFlag()         (INTCONbits.RBIF=0)    
 
 #if INTERRUPT_PRIORITY_LEVELS_ENABLE==INTERRUPT_FEATURE_ENABLE
 
-#define EXTERNAL_INTERRUPT_RBx_InterruptHighPriority()  (INTCON2bits.RBIP=1)
-#define EXTERNAL_INTERRUPT_RBx_InterruptLowPriority()   (INTCON2bits.RBIP=0)   
+#define EXTERNAL_INTERRUPT_RBx_InterruptHighPriority()      (INTCON2bits.RBIP=1)
+#define EXTERNAL_INTERRUPT_RBx_InterruptLowPriority()       (INTCON2bits.RBIP=0)   
 #endif
 
 #endif
 
 
 /* Section : Data Type Declarations */
+
+typedef void (*InterruptHandler)(void);
+
 typedef enum{
     INTERRUPT_FALLING_EDGE = 0 ,
     INTERRUPT_RISING_EDGE  = 1 ,       
