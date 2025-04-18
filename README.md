@@ -1,32 +1,68 @@
-# PIC18f4620-Embedded_System-
-PIC18f4620 Embedded System Project
-This repository contains an embedded systems project developed for the PIC18F4620 microcontroller. The project demonstrates the implementation of various drivers and modules, structured according to the Microcontroller Abstraction Layer (MCAL) and the External Control Unit (ECU) design patterns.
-GitHub
-GitHub
+# **PIC18F4620 Embedded System Project**
 
-Project Structure
-MCAL_layer/: Contains low-level drivers interfacing directly with the PIC18F4620 hardware peripherals.
+This repository contains an embedded systems project developed for the **PIC18F4620** microcontroller. It demonstrates the implementation of various drivers and modules, structured according to the **Microcontroller Abstraction Layer (MCAL)** and **External Control Unit (ECU)** design patterns, ensuring modularity and scalability.
 
-ECU_layer/: Houses higher-level modules built upon MCAL drivers, such as LEDs, buttons, and DC motors.
+---
 
-application.c / application.h: Main application logic that utilizes the ECU and MCAL layers to perform desired operations.
+## **📁 Project Structure**
 
-build/: Build artifacts generated during the compilation process.
 
-dist/: Distribution files, including the final hex file ready for deployment.
+---
 
-sim/: Simulation files for testing the application in a virtual environment.
+## **🛠 Getting Started**
 
-test/: Test cases and related files to verify the functionality of various modules.
+### **📦 Prerequisites**
 
-Makefile: Automates the build process using defined rules and dependencies.
+Before you begin, ensure you have the following:
 
-Getting Started
-Prerequisites
-MPLAB X IDE
+- **MPLAB X IDE** – For project development and debugging  
+- **XC8 Compiler** – For compiling code for the PIC18F4620  
+- **PIC18F4620 Microcontroller** – Target device  
+- **PICkit Programmer (e.g., PICkit 3)** – For uploading the compiled hex file to the microcontroller  
 
-XC8 Compiler
+---
 
-PIC18F4620 Microcontroller
+## **🔧 Layers Overview**
 
-PICkit Programmer (e.g., PICkit 3)
+### **MCAL Layer**
+- Contains low-level drivers that directly interface with the **PIC18F4620 hardware peripherals** (e.g., GPIO, Timers, ADC).
+- Each driver is modular and reusable across different projects.
+
+### **ECU Layer**
+- Built on top of the MCAL layer.
+- Includes higher-level modules like **LED**, **button**, and **DC motor control**, encapsulating peripheral interactions.
+
+### **Application Layer**
+- Defined in `application.c` and `application.h`.
+- Implements the actual logic and flow of the system using MCAL and ECU modules.
+
+---
+
+## **🚀 Deployment**
+
+1. Clone the repository.
+2. Open the project in **MPLAB X IDE**.
+3. Build the project using the **XC8 compiler**.
+4. Use **PICkit 3** or compatible programmer to upload the `.hex` file located in the `dist/` folder to your **PIC18F4620**.
+
+---
+
+## **🧪 Testing & Simulation**
+
+- The `sim/` folder includes simulation files for testing in environments like **MPLAB SIM**.
+- The `test/` directory contains **unit tests** to verify the behavior of individual modules and layers.
+
+---
+
+## **📜 License**
+
+This project is licensed under the **MIT License**. See `LICENSE` file for details.
+
+---
+
+## **👨‍💻 Author**
+
+- **Abdelrahman Basyouni** – [GitHub Profile](https://github.com/Albakatoshy)
+
+---
+
