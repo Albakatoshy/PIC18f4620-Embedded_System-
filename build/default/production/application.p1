@@ -3,51 +3,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ECU_layer/LED/ecu_led.h: 25: typedef struct {
 [s S274 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
 [n S274 . port_name pin led_status ]
-"13 application.c
-[; ;application.c: 13: led_t led1 ={
+"18 application.c
+[; ;application.c: 18: led_t led1={.port_name = PORTD_INDEX , .pin = GPIO_PIN0 , .led_status = GPIO_LOW};
 [c E2999 0 1 2 3 4 .. ]
 [n E2999 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
 [c E2989 0 1 2 3 4 5 6 7 .. ]
 [n E2989 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
 [c E2981 0 1 .. ]
 [n E2981 . GPIO_LOW GPIO_HIGH  ]
-"34 ./ECU_layer/LED/ecu_led.h
-[; ;./ECU_layer/LED/ecu_led.h: 34: Std_ReturnType led_turn_on(const led_t *led);
-[v _led_turn_on `(uc ~T0 @X0 0 ef1`*CS274 ]
-"35
-[; ;./ECU_layer/LED/ecu_led.h: 35: Std_ReturnType led_turn_off(const led_t *led);
-[v _led_turn_off `(uc ~T0 @X0 0 ef1`*CS274 ]
-[v F3219 `(v ~T0 @X0 0 tf ]
-[v F3221 `(v ~T0 @X0 0 tf ]
-"66 ./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h
-[; ;./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h: 66: typedef struct{
-[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S273 . port pin direction logic ]
-"71 application.c
-[; ;application.c: 71: interrupt_RBx_t RB4_int ={
-[c E3194 0 1 .. ]
-[n E3194 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
-"93 ./MCAL_layer/Interrupt/mcal_external_interrupt.h
-[; ;./MCAL_layer/Interrupt/mcal_external_interrupt.h: 93: typedef struct{
-[s S283 `*F3219 1 `*F3221 1 `S273 1 `E3194 1 ]
-[n S283 . EXT_InterruprHandler_HIGH EXT_InterruprHandler_LOW mcu_pin priority ]
-"71 application.c
-[; ;application.c: 71: interrupt_RBx_t RB4_int ={
-[c E2985 0 1 .. ]
-[n E2985 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
+[v F3382 `(v ~T0 @X0 0 tf ]
+"43 ./MCAL_layer/TIMER3/hal_timer3.h
+[; ;./MCAL_layer/TIMER3/hal_timer3.h: 43: typedef struct {
+[s S288 `*F3382 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 `uc 1 :3 `uc 1 ]
+[n S288 . TIMER3_InterruptHandler timer3_mode timer3_counter_Synchronization_select timer3_Prescaler_val timer3_read_write_mode timer3_preloaded_value timer3_preserved ]
 [p mainexit ]
-"30 ./application.h
-[; ;./application.h: 30: void application_initialize(void);
+"34 ./application.h
+[; ;./application.h: 34: void application_initialize(void);
 [v _application_initialize `(v ~T0 @X0 0 ef ]
 "33 ./ECU_layer/LED/ecu_led.h
 [; ;./ECU_layer/LED/ecu_led.h: 33: Std_ReturnType led_initialize(const led_t *led);
 [v _led_initialize `(uc ~T0 @X0 0 ef1`*CS274 ]
-"104 ./MCAL_layer/Interrupt/mcal_external_interrupt.h
-[; ;./MCAL_layer/Interrupt/mcal_external_interrupt.h: 104: Std_ReturnType Interrupt_RBx_Init(const interrupt_RBx_t *int_obj);
-[v _Interrupt_RBx_Init `(uc ~T0 @X0 0 ef1`*CS283 ]
-"20 ./ECU_layer/ecu_layer_init.h
-[; ;./ECU_layer/ecu_layer_init.h: 20: void ecu_layer_initialize(void);
-[v _ecu_layer_initialize `(v ~T0 @X0 0 ef ]
+"61 ./MCAL_layer/TIMER3/hal_timer3.h
+[; ;./MCAL_layer/TIMER3/hal_timer3.h: 61: Std_ReturnType Timer3_Init(const timer3_config_t *_timer);
+[v _Timer3_Init `(uc ~T0 @X0 0 ef1`*CS288 ]
+"63
+[; ;./MCAL_layer/TIMER3/hal_timer3.h: 63: Std_ReturnType Timer3_ReadVal(const timer3_config_t *_timer , uint16 *readVal);
+[v _Timer3_ReadVal `(uc ~T0 @X0 0 ef2`*CS288`*us ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -459,308 +440,124 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 application.c
-[; ;application.c: 13: led_t led1 ={
+"14 application.c
+[; ;application.c: 14: volatile uint32 timer3_flag= 0;
+[v _timer3_flag `Vui ~T0 @X0 1 e ]
+[i _timer3_flag
+-> -> 0 `i `ui
+]
+"15
+[; ;application.c: 15: volatile uint16 timer3_counter_readVal;
+[v _timer3_counter_readVal `Vus ~T0 @X0 1 e ]
+"17
+[; ;application.c: 17: Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 e ]
+[i _ret
+-> -> 0 `i `uc
+]
+"18
+[; ;application.c: 18: led_t led1={.port_name = PORTD_INDEX , .pin = GPIO_PIN0 , .led_status = GPIO_LOW};
 [v _led1 `S274 ~T0 @X0 1 e ]
 [i _led1
 :U ..
 :U ..
--> . `E2999 2 `uc
+-> . `E2999 3 `uc
 -> . `E2989 0 `uc
 -> . `E2981 0 `uc
 ..
 ..
 ]
-"19
-[; ;application.c: 19: led_t led2 ={
-[v _led2 `S274 ~T0 @X0 1 e ]
-[i _led2
-:U ..
-:U ..
--> . `E2999 2 `uc
--> . `E2989 1 `uc
--> . `E2981 0 `uc
-..
-..
-]
-"25
-[; ;application.c: 25: led_t led3 ={
-[v _led3 `S274 ~T0 @X0 1 e ]
-[i _led3
-:U ..
-:U ..
--> . `E2999 2 `uc
--> . `E2989 2 `uc
--> . `E2981 0 `uc
-..
-..
-]
-"31
-[; ;application.c: 31: led_t led4 ={
-[v _led4 `S274 ~T0 @X0 1 e ]
-[i _led4
-:U ..
-:U ..
--> . `E2999 2 `uc
--> . `E2989 3 `uc
--> . `E2981 0 `uc
-..
-..
-]
-"37
-[; ;application.c: 37: void RB4_int_ISR_HIGH(void){
-[v _RB4_int_ISR_HIGH `(v ~T0 @X0 1 ef ]
+"20
+[; ;application.c: 20: void Timer3_DefaultInterruptHandler(void){
+[v _Timer3_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[e :U _RB4_int_ISR_HIGH ]
+[e :U _Timer3_DefaultInterruptHandler ]
 [f ]
-"38
-[; ;application.c: 38:     led_turn_on(&led1);
-[e ( _led_turn_on (1 -> &U _led1 `*CS274 ]
-"39
-[; ;application.c: 39: }
-[e :UE 284 ]
-}
-"41
-[; ;application.c: 41: void RB4_int_ISR_LOW(void){
-[v _RB4_int_ISR_LOW `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB4_int_ISR_LOW ]
-[f ]
-"42
-[; ;application.c: 42:     led_turn_on(&led2);
-[e ( _led_turn_on (1 -> &U _led2 `*CS274 ]
-"43
-[; ;application.c: 43: }
-[e :UE 285 ]
-}
-"45
-[; ;application.c: 45: void RB5_int_ISR_HIGH(void){
-[v _RB5_int_ISR_HIGH `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB5_int_ISR_HIGH ]
-[f ]
-"46
-[; ;application.c: 46:     led_turn_off(&led1);
-[e ( _led_turn_off (1 -> &U _led1 `*CS274 ]
-"47
-[; ;application.c: 47: }
-[e :UE 286 ]
-}
-"49
-[; ;application.c: 49: void RB5_int_ISR_LOW(void){
-[v _RB5_int_ISR_LOW `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB5_int_ISR_LOW ]
-[f ]
-"50
-[; ;application.c: 50:     led_turn_off(&led2);
-[e ( _led_turn_off (1 -> &U _led2 `*CS274 ]
-"51
-[; ;application.c: 51: }
-[e :UE 287 ]
-}
-"53
-[; ;application.c: 53: void RB6_int_ISR_HIGH(void){
-[v _RB6_int_ISR_HIGH `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB6_int_ISR_HIGH ]
-[f ]
-"54
-[; ;application.c: 54:     led_turn_on(&led3);
-[e ( _led_turn_on (1 -> &U _led3 `*CS274 ]
-"55
-[; ;application.c: 55: }
-[e :UE 288 ]
-}
-"57
-[; ;application.c: 57: void RB6_int_ISR_LOW(void){
-[v _RB6_int_ISR_LOW `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB6_int_ISR_LOW ]
-[f ]
-"58
-[; ;application.c: 58:     led_turn_on(&led4);
-[e ( _led_turn_on (1 -> &U _led4 `*CS274 ]
-"59
-[; ;application.c: 59: }
+"21
+[; ;application.c: 21:     timer3_flag++;
+[e ++ _timer3_flag -> -> 1 `i `Vui ]
+"22
+[; ;application.c: 22: }
 [e :UE 289 ]
 }
-"61
-[; ;application.c: 61: void RB7_int_ISR_HIGH(void){
-[v _RB7_int_ISR_HIGH `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB7_int_ISR_HIGH ]
-[f ]
-"62
-[; ;application.c: 62:     led_turn_off(&led3);
-[e ( _led_turn_off (1 -> &U _led3 `*CS274 ]
-"63
-[; ;application.c: 63: }
-[e :UE 290 ]
-}
-"65
-[; ;application.c: 65: void RB7_int_ISR_LOW(void){
-[v _RB7_int_ISR_LOW `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB7_int_ISR_LOW ]
-[f ]
-"66
-[; ;application.c: 66:     led_turn_off(&led4);
-[e ( _led_turn_off (1 -> &U _led4 `*CS274 ]
-"67
-[; ;application.c: 67: }
-[e :UE 291 ]
-}
-"71
-[; ;application.c: 71: interrupt_RBx_t RB4_int ={
-[v _RB4_int `S283 ~T0 @X0 1 e ]
-[i _RB4_int
+"24
+[; ;application.c: 24: timer3_config_t timer3_obj = {
+[v _timer3_obj `S288 ~T0 @X0 1 e ]
+[i _timer3_obj
 :U ..
 :U ..
-&U _RB4_int_ISR_HIGH
-&U _RB4_int_ISR_LOW
-:U ..
-:U ..
--> . `E2999 1 `uc
--> . `E2989 4 `uc
--> . `E2985 1 `uc
--> . `E2981 0 `uc
-..
-..
-. `E3194 1
+&U _Timer3_DefaultInterruptHandler
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 15536 `i `uc
 ..
 ..
 ]
-"81
-[; ;application.c: 81: interrupt_RBx_t RB5_int ={
-[v _RB5_int `S283 ~T0 @X0 1 e ]
-[i _RB5_int
+"32
+[; ;application.c: 32: timer3_config_t counter_obj = {
+[v _counter_obj `S288 ~T0 @X0 1 e ]
+[i _counter_obj
 :U ..
 :U ..
-&U _RB5_int_ISR_HIGH
-&U _RB5_int_ISR_LOW
-:U ..
-:U ..
--> . `E2999 1 `uc
--> . `E2989 5 `uc
--> . `E2985 1 `uc
--> . `E2981 0 `uc
-..
-..
-. `E3194 1
-..
-..
-]
-"91
-[; ;application.c: 91: interrupt_RBx_t RB6_int ={
-[v _RB6_int `S283 ~T0 @X0 1 e ]
-[i _RB6_int
-:U ..
-:U ..
-&U _RB6_int_ISR_HIGH
-&U _RB6_int_ISR_LOW
-:U ..
-:U ..
--> . `E2999 1 `uc
--> . `E2989 6 `uc
--> . `E2985 1 `uc
--> . `E2981 0 `uc
-..
-..
-. `E3194 1
-..
-..
-]
-"101
-[; ;application.c: 101: interrupt_RBx_t RB7_int ={
-[v _RB7_int `S283 ~T0 @X0 1 e ]
-[i _RB7_int
-:U ..
-:U ..
-&U _RB7_int_ISR_HIGH
-&U _RB7_int_ISR_LOW
-:U ..
-:U ..
--> . `E2999 1 `uc
--> . `E2989 7 `uc
--> . `E2985 1 `uc
--> . `E2981 0 `uc
-..
-..
-. `E3194 1
+&U _Timer3_DefaultInterruptHandler
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
 ..
 ..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"112
-[; ;application.c: 112: int main() {
+"42
+[; ;application.c: 42: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"113
-[; ;application.c: 113:     Std_ReturnType ret = (Std_ReturnType)0x01;
-[v _ret `uc ~T0 @X0 1 a ]
-[e = _ret -> -> 1 `i `uc ]
-"114
-[; ;application.c: 114:     application_initialize();
+"44
+[; ;application.c: 44:     application_initialize();
 [e ( _application_initialize ..  ]
-"117
-[; ;application.c: 117:     ret = led_initialize(&led1);
+"45
+[; ;application.c: 45:     ret = led_initialize(&led1);
 [e = _ret ( _led_initialize (1 -> &U _led1 `*CS274 ]
-"118
-[; ;application.c: 118:     ret = led_initialize(&led2);
-[e = _ret ( _led_initialize (1 -> &U _led2 `*CS274 ]
-"119
-[; ;application.c: 119:     ret = led_initialize(&led3);
-[e = _ret ( _led_initialize (1 -> &U _led3 `*CS274 ]
-"120
-[; ;application.c: 120:     ret = led_initialize(&led4);
-[e = _ret ( _led_initialize (1 -> &U _led4 `*CS274 ]
-"121
-[; ;application.c: 121:     ret = Interrupt_RBx_Init(&RB4_int);
-[e = _ret ( _Interrupt_RBx_Init (1 -> &U _RB4_int `*CS283 ]
-"122
-[; ;application.c: 122:     ret = Interrupt_RBx_Init(&RB5_int);
-[e = _ret ( _Interrupt_RBx_Init (1 -> &U _RB5_int `*CS283 ]
-"123
-[; ;application.c: 123:     ret = Interrupt_RBx_Init(&RB6_int);
-[e = _ret ( _Interrupt_RBx_Init (1 -> &U _RB6_int `*CS283 ]
-"124
-[; ;application.c: 124:     ret = Interrupt_RBx_Init(&RB7_int);
-[e = _ret ( _Interrupt_RBx_Init (1 -> &U _RB7_int `*CS283 ]
-"127
-[; ;application.c: 127:     while(1){
-[e :U 294 ]
+"46
+[; ;application.c: 46:     ret = Timer3_Init(&counter_obj);
+[e = _ret ( _Timer3_Init (1 -> &U _counter_obj `*CS288 ]
+"49
+[; ;application.c: 49:     while(1){
+[e :U 292 ]
 {
-"129
-[; ;application.c: 129:    }
+"51
+[; ;application.c: 51:         ret = Timer3_ReadVal(&counter_obj ,&timer3_counter_readVal );
+[e = _ret ( _Timer3_ReadVal (2 , -> &U _counter_obj `*CS288 -> &U _timer3_counter_readVal `*us ]
+"53
+[; ;application.c: 53:    }
 }
+[e :U 291 ]
+[e $U 292  ]
 [e :U 293 ]
-[e $U 294  ]
-[e :U 295 ]
-"131
-[; ;application.c: 131:     return (0);
+"55
+[; ;application.c: 55:     return (0);
 [e ) -> 0 `i ]
-[e $UE 292  ]
-"134
-[; ;application.c: 134: }
-[e :UE 292 ]
+[e $UE 290  ]
+"58
+[; ;application.c: 58: }
+[e :UE 290 ]
 }
-"138
-[; ;application.c: 138: void application_initialize(void){
+"62
+[; ;application.c: 62: void application_initialize(void){
 [v _application_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_initialize ]
 [f ]
-"139
-[; ;application.c: 139:     Std_ReturnType ret = (Std_ReturnType)0x01;
+"63
+[; ;application.c: 63:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"141
-[; ;application.c: 141:     ecu_layer_initialize();
-[e ( _ecu_layer_initialize ..  ]
-"143
-[; ;application.c: 143: }
-[e :UE 296 ]
+"66
+[; ;application.c: 66: }
+[e :UE 294 ]
 }

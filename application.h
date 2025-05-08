@@ -12,17 +12,21 @@
 
 
 #include "ECU_layer/ecu_layer_init.h"
+#include "ECU_layer/LCD/ecu_chr_lcd.h"
 #include "MCAL_layer/Interrupt/mcal_external_interrupt.h"
-
+#include "MCAL_layer/EEPROM/hal_eeprom.h"
+#include "MCAL_layer/ADC/hal_adc.h"
+#include "MCAL_layer/TIMER0/hal_timer0.h"
+#include "MCAL_layer/TIMER1/hal_timer1.h"
+#include "MCAL_layer/TIMER2/hal_timer2.h"
+#include "MCAL_layer/TIMER3/hal_timer3.h"
 
 /* Section : Macro Declarations */
 
 /* Section : Macro Functions Declarations */
 
 /* Section : Data Type Declarations */
-extern keypad_t keypad1 ;
-extern chr_lcd_8bit_t lcd2 ;
-extern chr_lcd_4bit_t lcd1 ;
+
 
 
 /* Section : Function Declarations */

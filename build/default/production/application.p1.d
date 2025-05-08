@@ -32,4 +32,30 @@ MCAL_layer/Interrupt/mcal_external_interrupt.h  \
 MCAL_layer/Interrupt/mcal_interrupt_config.h  \
 MCAL_layer/Interrupt/../GPIO/mcal_std_types.h  \
 MCAL_layer/Interrupt/mcal_interrupt_gen_cfg.h  \
-MCAL_layer/Interrupt/../GPIO/hal_gpio.h 
+MCAL_layer/Interrupt/../GPIO/hal_gpio.h  \
+MCAL_layer/EEPROM/hal_eeprom.h  \
+MCAL_layer/EEPROM/../GPIO/hal_gpio.h  \
+MCAL_layer/EEPROM/../GPIO/mcal_std_types.h  \
+MCAL_layer/EEPROM/../Interrupt/mcal_interrupt_config.h  \
+MCAL_layer/ADC/hal_adc.h  \
+MCAL_layer/ADC/hal_adc_cfg.h  \
+MCAL_layer/ADC/../GPIO/mcal_std_types.h  \
+MCAL_layer/ADC/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/ADC/../Interrupt/mcal_interrupt_config.h  \
+MCAL_layer/ADC/../GPIO/hal_gpio.h  \
+MCAL_layer/TIMER0/hal_timer0.h  \
+MCAL_layer/TIMER0/../GPIO/hal_gpio.h  \
+MCAL_layer/TIMER0/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/TIMER0/../GPIO/mcal_std_types.h  \
+MCAL_layer/TIMER1/hal_timer1.h  \
+MCAL_layer/TIMER1/../GPIO/hal_gpio.h  \
+MCAL_layer/TIMER1/../GPIO/mcal_std_types.h  \
+MCAL_layer/TIMER1/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/TIMER2/hal_timer2.h  \
+MCAL_layer/TIMER2/../GPIO/hal_gpio.h  \
+MCAL_layer/TIMER2/../GPIO/mcal_std_types.h  \
+MCAL_layer/TIMER2/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/TIMER3/hal_timer3.h  \
+MCAL_layer/TIMER3/../GPIO/hal_gpio.h  \
+MCAL_layer/TIMER3/../GPIO/mcal_std_types.h  \
+MCAL_layer/TIMER3/../Interrupt/mcal_internal_interrupt.h 

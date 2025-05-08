@@ -10,19 +10,19 @@
 
 
 //static void (*INT0_InterruptHandler)(void) = NULL;
-InterruptHandler INT0_InterruptHandler = NULL;
-InterruptHandler INT1_InterruptHandler = NULL;
-InterruptHandler INT2_InterruptHandler = NULL;
+static InterruptHandler INT0_InterruptHandler = NULL;
+static InterruptHandler INT1_InterruptHandler = NULL;
+static InterruptHandler INT2_InterruptHandler = NULL;
 
 
-InterruptHandler RB4_InterruptHandler_HIGH = NULL;
-InterruptHandler RB4_InterruptHandler_LOW = NULL;
-InterruptHandler RB5_InterruptHandler_HIGH = NULL;
-InterruptHandler RB5_InterruptHandler_LOW = NULL;
-InterruptHandler RB6_InterruptHandler_HIGH = NULL;
-InterruptHandler RB6_InterruptHandler_LOW = NULL;
-InterruptHandler RB7_InterruptHandler_HIGH = NULL;
-InterruptHandler RB7_InterruptHandler_LOW = NULL;
+static InterruptHandler RB4_InterruptHandler_HIGH = NULL;
+static InterruptHandler RB4_InterruptHandler_LOW = NULL;
+static InterruptHandler RB5_InterruptHandler_HIGH = NULL;
+static InterruptHandler RB5_InterruptHandler_LOW = NULL;
+static InterruptHandler RB6_InterruptHandler_HIGH = NULL;
+static InterruptHandler RB6_InterruptHandler_LOW = NULL;
+static InterruptHandler RB7_InterruptHandler_HIGH = NULL;
+static InterruptHandler RB7_InterruptHandler_LOW = NULL;
 
 
 
@@ -226,7 +226,7 @@ Std_ReturnType Interrupt_RBx_Init(const interrupt_RBx_t *int_obj){
                 break;    
         }
         
-        
+                
         
         EXTERNAL_INTERRUPT_RBx_InterruptEnable();
     }

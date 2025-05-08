@@ -8,7 +8,7 @@
 #ifndef ECU_CHR_LCD_H
 #define	ECU_CHR_LCD_H
 
-#define _XTAL_FREQ 4000000  // 4 MHz clock
+#define _XTAL_FREQ 8000000  // 4 MHz clock
 
 /*Section : Includes */
 

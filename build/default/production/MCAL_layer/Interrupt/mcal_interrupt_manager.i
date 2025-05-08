@@ -4812,13 +4812,18 @@ void RB4_ISR(uint8 RB4_Source);
 void RB5_ISR(uint8 RB5_Source);
 void RB6_ISR(uint8 RB6_Source);
 void RB7_ISR(uint8 RB7_Source);
+void ADC_ISR(void);
+void TIMER0_ISR(void);
+void TIMER1_ISR(void);
+void TIMER2_ISR(void);
+void TIMER3_ISR(void);
 # 10 "MCAL_layer/Interrupt/mcal_interrupt_manager.c" 2
 
 static volatile uint8 RB4_FLAG = 1 ;
 static volatile uint8 RB5_FLAG = 1 ;
 static volatile uint8 RB6_FLAG = 1 ;
 static volatile uint8 RB7_FLAG = 1 ;
-# 34 "MCAL_layer/Interrupt/mcal_interrupt_manager.c"
+# 58 "MCAL_layer/Interrupt/mcal_interrupt_manager.c"
 void __attribute__((picinterrupt(("")))) InterruptManager(void){
     if((1 == INTCONbits.INT0IE) && (1 == INTCONbits.INT0IF)){
         INT0_ISR();
@@ -4880,6 +4885,31 @@ void __attribute__((picinterrupt(("")))) InterruptManager(void){
     if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB7 == GPIO_LOW)&& (RB7_FLAG == 0)){
         RB7_FLAG=1;
         RB7_ISR(1);
+    }
+    else{ }
+
+    if((1 == (PIE1bits.ADIE)) && (1 == (PIR1bits.ADIF) )){
+        ADC_ISR();
+    }
+    else{ }
+
+    if((1 == (INTCONbits.TMR0IE)) && (1 ==(INTCONbits.TMR0IF)) ){
+        TIMER0_ISR();
+    }
+    else{ }
+
+    if((1 == (PIE1bits.TMR1IE)) && (1 == (PIR1bits.TMR1IF))){
+        TIMER1_ISR();
+    }
+    else{ }
+
+    if((1 == (PIE1bits.TMR2IE)) && (1 == (PIR1bits.TMR2IF))){
+        TIMER2_ISR();
+    }
+    else{ }
+
+    if ((1 == (PIE2bits.TMR3IE)) && (1 == (PIR2bits.TMR3IF))){
+        TIMER3_ISR();
     }
     else{ }
 }
