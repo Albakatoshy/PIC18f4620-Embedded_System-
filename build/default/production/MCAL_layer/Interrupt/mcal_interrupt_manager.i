@@ -4726,11 +4726,11 @@ unsigned char __t3rd16on(void);
 
 typedef unsigned char uint8;
 typedef unsigned short uint16;
-typedef unsigned int uint32;
+typedef unsigned long uint32;
 
 typedef signed char sint8;
 typedef signed short sint16;
-typedef signed int sint32;
+typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
 # 14 "MCAL_layer/Interrupt/mcal_interrupt_config.h" 2
@@ -4817,6 +4817,11 @@ void TIMER0_ISR(void);
 void TIMER1_ISR(void);
 void TIMER2_ISR(void);
 void TIMER3_ISR(void);
+void CCP1_ISR(void);
+void CCP2_ISR(void);
+void EUSART_Tx_ISR(void);
+void EUSART_Rx_ISR(void);
+void SPI_ISR(void);
 # 10 "MCAL_layer/Interrupt/mcal_interrupt_manager.c" 2
 
 static volatile uint8 RB4_FLAG = 1 ;
@@ -4912,4 +4917,30 @@ void __attribute__((picinterrupt(("")))) InterruptManager(void){
         TIMER3_ISR();
     }
     else{ }
+
+    if ((1 == (PIE1bits.CCP1IE)) && (1 == (PIR1bits.CCP1IF))){
+        CCP1_ISR();
+    }
+    else{ }
+
+    if ((1 == (PIE2bits.CCP2IE)) && (1 == (PIR2bits.CCP2IF))){
+        CCP2_ISR();
+    }
+    else{ }
+
+    if ((1 == (PIE1bits.TXIE)) && (1 == (PIR1bits.TXIF))){
+        EUSART_Tx_ISR();
+    }
+    else{ }
+
+    if ((1 == (PIE1bits.RCIE)) && (1 == (PIR1bits.RCIF))){
+        EUSART_Rx_ISR();
+    }
+    else{ }
+
+    if ((1 == (PIE1bits.SSPIE)) && (1 == (PIR1bits.SSPIF))){
+        SPI_ISR();
+    }
+    else{ }
+
 }

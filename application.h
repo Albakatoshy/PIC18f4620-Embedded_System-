@@ -20,6 +20,8 @@
 #include "MCAL_layer/TIMER1/hal_timer1.h"
 #include "MCAL_layer/TIMER2/hal_timer2.h"
 #include "MCAL_layer/TIMER3/hal_timer3.h"
+#include "MCAL_layer/CCP/hal_ccp.h"
+#include "MCAL_layer/USART/hal_usart.h"
 
 /* Section : Macro Declarations */
 

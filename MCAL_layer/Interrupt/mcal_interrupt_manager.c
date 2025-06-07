@@ -143,6 +143,32 @@ void __interrupt() InterruptManager(void){
         TIMER3_ISR();
     }
     else{/*NOTHING*/}
+    
+    if ((INTERRUPT_ENABLE == (PIE1bits.CCP1IE)) && (INTERRUPT_OCCUR == (PIR1bits.CCP1IF))){
+        CCP1_ISR();
+    }
+    else{/*NOTHING*/}
+    
+    if ((INTERRUPT_ENABLE == (PIE2bits.CCP2IE)) && (INTERRUPT_OCCUR == (PIR2bits.CCP2IF))){
+        CCP2_ISR();
+    }
+    else{/*NOTHING*/}
+    
+    if ((INTERRUPT_ENABLE == (PIE1bits.TXIE)) && (INTERRUPT_OCCUR == (PIR1bits.TXIF))){
+        EUSART_Tx_ISR();
+    }
+    else{/*NOTHING*/}
+    
+    if ((INTERRUPT_ENABLE == (PIE1bits.RCIE)) && (INTERRUPT_OCCUR == (PIR1bits.RCIF))){
+        EUSART_Rx_ISR();
+    }
+    else{/*NOTHING*/}
+    
+    if ((INTERRUPT_ENABLE == (PIE1bits.SSPIE)) && (INTERRUPT_OCCUR == (PIR1bits.SSPIF))){
+        SPI_ISR();
+    }
+    else{/*NOTHING*/}
+    
 }
 #endif
 

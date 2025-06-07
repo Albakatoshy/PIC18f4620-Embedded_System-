@@ -1,0 +1,152 @@
+/* 
+ * File:   application.c
+ * Author: abdalrahman.ahmed
+ *
+ * Created on January 27, 2025, 2:15 AM
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "application.h"
+Std_ReturnType ret = E_NOT_OK;
+
+
+uint8 test_read = ZERO_INIT ;
+
+led_t led1= {
+  .led_status = GPIO_LOW ,
+  .pin        =GPIO_PIN0 ,
+  .port_name  = PORTD_INDEX,
+};
+led_t led2= {
+  .led_status = GPIO_LOW ,
+  .pin        =GPIO_PIN1 ,
+  .port_name  = PORTD_INDEX,
+};
+
+volatile uint32 test_tx_interrupt = ZERO_INIT;
+volatile uint32 test_rx_interrupt = ZERO_INIT;
+
+void TxInterruptHandler_test(void);
+void RxInterruptHandler_test(void);
+void FramingErrorHandler_test(void);
+void OverrunHandler_test(void);
+//usart_t uasrt_obj = {
+//    .baudrate = 9600 ,
+//    .baudrate_gen_cfg = BAUDRATE_ASYNC_8BIT_LOW_SPEED ,
+//    .usart_mode_selection = EUSART_ASYNCHRONOUS_MODE_CFG,
+//    .usart_tx_cfg.usart_tx_enable = EUSART_ASYNCHRONOUS_TX_ENABLE_CFG ,
+//    .usart_tx_cfg.usart_tx_interrupt_enable = EUSART_ASYNCHRONOUS_TX_INTERRUPT_DISABLE_CFG ,
+//    .usart_tx_cfg.usart_tx_9bit_enable = EUSART_ASYNCHRONOUS_8BIT_TX_ENABLE_CFG,
+//    .usart_rx_cfg.usart_rx_enable = EUSART_ASYNCHRONOUS_RX_ENABLE_CFG ,
+//    .usart_rx_cfg.usart_rx_interrupt_enable = EUSART_ASYNCHRONOUS_RX_INTERRUPT_DISABLE_CFG ,
+//    .usart_rx_cfg.usart_rx_9bit_enable = EUSART_ASYNCHRONOUS_8BIT_RX_ENABLE_CFG,
+//    .EUSART_TxInterruptHandler = NULL ,
+//    .EUSART_RxInterruptHandler = NULL ,
+//    .EUSART_FramingErrorHandler= NULL , 
+//    .EUSART_OverrunHandler     = NULL ,
+//};
+
+usart_t uasrt_Interrupt_obj= {
+    .baudrate = 9600 ,
+    .baudrate_gen_cfg = BAUDRATE_ASYNC_8BIT_LOW_SPEED ,
+    .usart_mode_selection = EUSART_ASYNCHRONOUS_MODE_CFG,
+    .usart_tx_cfg.usart_tx_enable = EUSART_ASYNCHRONOUS_TX_ENABLE_CFG ,
+    .usart_tx_cfg.usart_tx_interrupt_enable = EUSART_ASYNCHRONOUS_TX_INTERRUPT_ENABLE_CFG ,
+    .usart_tx_cfg.usart_tx_9bit_enable = EUSART_ASYNCHRONOUS_8BIT_TX_ENABLE_CFG,
+    .usart_rx_cfg.usart_rx_enable = EUSART_ASYNCHRONOUS_RX_ENABLE_CFG ,
+    .usart_rx_cfg.usart_rx_interrupt_enable = EUSART_ASYNCHRONOUS_RX_INTERRUPT_ENABLE_CFG ,
+    .usart_rx_cfg.usart_rx_9bit_enable = EUSART_ASYNCHRONOUS_8BIT_RX_ENABLE_CFG,
+    .EUSART_TxInterruptHandler = NULL ,
+    .EUSART_RxInterruptHandler = NULL ,
+    .EUSART_FramingErrorHandler= NULL , 
+    .EUSART_OverrunHandler     = NULL ,  
+}; 
+
+
+
+int main() {
+    
+    
+    ret = EUSART_Init(&uasrt_Interrupt_obj);
+    ret = led_initialize(&led1);
+    ret = led_initialize(&led2);
+    
+    while(1){
+//          ret = EUSART_WriteSrtingBlocking("HELLO\r" , 6);  
+//        ret = EUSART_WriteByteBlocking('a');
+//        __delay_ms(500);
+//        ret = EUSART_WriteSrtingBlocking("ABOOD\r" , 6 );
+//        __delay_ms(500);
+//        ret = EUSART_WriteSrtingBlocking("AHMED\r" , 6 );
+//        __delay_ms(500);
+        
+//        ret = EUSART_ReadByteNoBlocking(&uasrt_obj , &test_read );
+//        if(E_OK == ret ){
+//            if('a' == test_read ){
+//                led_turn_on(&led1);
+//                ret = EUSART_WriteSrtingBlocking("LED ON \r" , 8 );
+//            }
+//            else if('b' == test_read){
+//                led_turn_off(&led1);
+//                ret = EUSART_WriteSrtingBlocking("LED OFF \r" , 9 );
+//            }
+//        }
+        
+//        ret = EUSART_WriteByteBlocking('a');
+//        __delay_ms(1000);
+//        ret = EUSART_WriteByteBlocking('b');
+//        __delay_ms(1000);
+        ret = EUSART_WriteByteNoBlocking('a');
+        
+         
+   }
+    
+    return (EXIT_SUCCESS);
+    
+     
+}
+
+
+
+void application_initialize(void){
+    Std_ReturnType ret = E_OK;
+    
+    
+}
+
+void TxInterruptHandler_test(void){
+    test_tx_interrupt++;
+}
+void RxInterruptHandler_test(void){
+    test_rx_interrupt++;
+    ret = EUSART_ReadByteNoBlocking(&test_read);
+    if ('a' == test_read){
+        ret = led_turn_on(&led1);
+        ret = EUSART_WriteSrtingBlocking("LED ON \r" , 8 );
+    }
+    else if('s' == test_read){
+        ret = led_turn_off(&led1);
+    }
+    else if('d' == test_read){
+        ret = led_turn_on(&led2);
+    }
+    else if('f' == test_read){
+        ret = led_turn_off(&led2);
+    }
+}
+
+void FramingErrorHandler_test(void){
+    uint8 _data_from_rx_REG;
+    _data_from_rx_REG = EUSART_ReadByteNoBlocking(&_data_from_rx_REG);
+}
+
+void OverrunHandler_test(void){
+    ret = EUSART_RX_Restart();
+}
+
+
+
+       
+
+

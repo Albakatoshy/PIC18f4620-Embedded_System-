@@ -1,6 +1,5 @@
 #include "ecu_layer_init.h"
 
-#define _XTAL_FREQ 8000000  // 4 MHz clock
 
 chr_lcd_4bit_t lcd1 = {
     .lcd_rs_pin.port        = PORTC_INDEX,

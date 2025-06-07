@@ -158,6 +158,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35 MCAL_layer/Interrupt/mcal_interrupt_manager.h
 [; ;MCAL_layer/Interrupt/mcal_interrupt_manager.h: 35: void TIMER3_ISR(void);
 [v _TIMER3_ISR `(v ~T0 @X0 0 ef ]
+"36
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.h: 36: void CCP1_ISR(void);
+[v _CCP1_ISR `(v ~T0 @X0 0 ef ]
+"37
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.h: 37: void CCP2_ISR(void);
+[v _CCP2_ISR `(v ~T0 @X0 0 ef ]
+"38
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.h: 38: void EUSART_Tx_ISR(void);
+[v _EUSART_Tx_ISR `(v ~T0 @X0 0 ef ]
+"39
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.h: 39: void EUSART_Rx_ISR(void);
+[v _EUSART_Rx_ISR `(v ~T0 @X0 0 ef ]
+"40
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.h: 40: void SPI_ISR(void);
+[v _SPI_ISR `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -896,7 +911,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 }
 [e :U 306 ]
-"146
-[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 146: }
+"147
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 147:     if ((1 == (PIE1bits.CCP1IE)) && (1 == (PIR1bits.CCP1IF))){
+[e $ ! && == -> 1 `i -> . . _PIE1bits 0 2 `i == -> 1 `i -> . . _PIR1bits 0 2 `i 307  ]
+{
+"148
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 148:         CCP1_ISR();
+[e ( _CCP1_ISR ..  ]
+"149
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 149:     }
+}
+[e $U 308  ]
+"150
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 150:     else{ }
+[e :U 307 ]
+{
+}
+[e :U 308 ]
+"152
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 152:     if ((1 == (PIE2bits.CCP2IE)) && (1 == (PIR2bits.CCP2IF))){
+[e $ ! && == -> 1 `i -> . . _PIE2bits 0 0 `i == -> 1 `i -> . . _PIR2bits 0 0 `i 309  ]
+{
+"153
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 153:         CCP2_ISR();
+[e ( _CCP2_ISR ..  ]
+"154
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 154:     }
+}
+[e $U 310  ]
+"155
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 155:     else{ }
+[e :U 309 ]
+{
+}
+[e :U 310 ]
+"157
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 157:     if ((1 == (PIE1bits.TXIE)) && (1 == (PIR1bits.TXIF))){
+[e $ ! && == -> 1 `i -> . . _PIE1bits 0 4 `i == -> 1 `i -> . . _PIR1bits 0 4 `i 311  ]
+{
+"158
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 158:         EUSART_Tx_ISR();
+[e ( _EUSART_Tx_ISR ..  ]
+"159
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 159:     }
+}
+[e $U 312  ]
+"160
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 160:     else{ }
+[e :U 311 ]
+{
+}
+[e :U 312 ]
+"162
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 162:     if ((1 == (PIE1bits.RCIE)) && (1 == (PIR1bits.RCIF))){
+[e $ ! && == -> 1 `i -> . . _PIE1bits 0 5 `i == -> 1 `i -> . . _PIR1bits 0 5 `i 313  ]
+{
+"163
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 163:         EUSART_Rx_ISR();
+[e ( _EUSART_Rx_ISR ..  ]
+"164
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 164:     }
+}
+[e $U 314  ]
+"165
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 165:     else{ }
+[e :U 313 ]
+{
+}
+[e :U 314 ]
+"167
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 167:     if ((1 == (PIE1bits.SSPIE)) && (1 == (PIR1bits.SSPIF))){
+[e $ ! && == -> 1 `i -> . . _PIE1bits 0 3 `i == -> 1 `i -> . . _PIR1bits 0 3 `i 315  ]
+{
+"168
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 168:         SPI_ISR();
+[e ( _SPI_ISR ..  ]
+"169
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 169:     }
+}
+[e $U 316  ]
+"170
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 170:     else{ }
+[e :U 315 ]
+{
+}
+[e :U 316 ]
+"172
+[; ;MCAL_layer/Interrupt/mcal_interrupt_manager.c: 172: }
 [e :UE 274 ]
 }

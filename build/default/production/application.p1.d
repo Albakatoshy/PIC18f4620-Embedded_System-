@@ -58,4 +58,18 @@ MCAL_layer/TIMER2/../Interrupt/mcal_internal_interrupt.h  \
 MCAL_layer/TIMER3/hal_timer3.h  \
 MCAL_layer/TIMER3/../GPIO/hal_gpio.h  \
 MCAL_layer/TIMER3/../GPIO/mcal_std_types.h  \
-MCAL_layer/TIMER3/../Interrupt/mcal_internal_interrupt.h 
+MCAL_layer/TIMER3/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/CCP/hal_ccp.h  \
+MCAL_layer/CCP/../GPIO/hal_gpio.h  \
+MCAL_layer/CCP/../GPIO/mcal_std_types.h  \
+MCAL_layer/CCP/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/CCP/hal_ccp_cfg.h  \
+MCAL_layer/USART/hal_usart.h  \
+MCAL_layer/USART/../GPIO/hal_gpio.h  \
+MCAL_layer/USART/../GPIO/mcal_std_types.h  \
+MCAL_layer/USART/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/USART/hal_usart_cfg.h  \
+MCAL_layer/SPI/hal_spi.h  \
+MCAL_layer/SPI/../GPIO/hal_gpio.h  \
+MCAL_layer/SPI/../GPIO/mcal_std_types.h  \
+MCAL_layer/SPI/../Interrupt/mcal_internal_interrupt.h 

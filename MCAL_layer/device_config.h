@@ -10,7 +10,7 @@
 
 
 /*Section : Includes */
-
+#define _XTAL_FREQ 8000000UL
 /* Section : Macro Declarations */
 
 /* Section : Macro Functions Declarations */

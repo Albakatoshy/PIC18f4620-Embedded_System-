@@ -1,34 +1,44 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"25 ./ECU_layer/LED/ecu_led.h
-[; ;./ECU_layer/LED/ecu_led.h: 25: typedef struct {
-[s S274 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S274 . port_name pin led_status ]
-"18 application.c
-[; ;application.c: 18: led_t led1={.port_name = PORTD_INDEX , .pin = GPIO_PIN0 , .led_status = GPIO_LOW};
+[v F3528 `(v ~T0 @X0 0 tf ]
+"16 application.c
+[; ;application.c: 16: SPI_Config test_spi = {
+[c E3194 0 1 .. ]
+[n E3194 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
+[c E3512 0 1 2 3 4 5 .. ]
+[n E3512 . SPI_MASTER_MODE_FOSC_DIV_4 SPI_MASTER_MODE_FOSC_DIV_16 SPI_MASTER_MODE_FOSC_DIV_64 SPI_MASTER_MODE_FOSC_TMR2_DIV_2 SPI_SLAVE_MODE_FOSC_SS_ENABLED SPI_SLAVE_MODE_FOSC_SS_DISABLED  ]
+"53 ./MCAL_layer/SPI/hal_spi.h
+[; ;./MCAL_layer/SPI/hal_spi.h: 53: typedef struct{
+[s S298 :2 `uc 1 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S298 . ClockPolarity SampleSelect ClockSelect Reserved ]
+"60
+[; ;./MCAL_layer/SPI/hal_spi.h: 60: typedef struct{
+[s S299 `*F3528 1 `E3194 1 `E3512 1 `S298 1 ]
+[n S299 . MSSP_SPI_InterruptHandler priority spi_mode spi_config ]
+[v F3546 `(v ~T0 @X0 0 tf ]
+"66 ./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h
+[; ;./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h: 66: typedef struct{
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . port pin direction logic ]
+"23 application.c
+[; ;application.c: 23: pin_config_t D0 ={
 [c E2999 0 1 2 3 4 .. ]
 [n E2999 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
 [c E2989 0 1 2 3 4 5 6 7 .. ]
 [n E2989 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
+[c E2985 0 1 .. ]
+[n E2985 . GPIO_DIRECTION_OUTPUT GPIO_DIRECTION_INPUT  ]
 [c E2981 0 1 .. ]
 [n E2981 . GPIO_LOW GPIO_HIGH  ]
-[v F3382 `(v ~T0 @X0 0 tf ]
-"43 ./MCAL_layer/TIMER3/hal_timer3.h
-[; ;./MCAL_layer/TIMER3/hal_timer3.h: 43: typedef struct {
-[s S288 `*F3382 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 `uc 1 :3 `uc 1 ]
-[n S288 . TIMER3_InterruptHandler timer3_mode timer3_counter_Synchronization_select timer3_Prescaler_val timer3_read_write_mode timer3_preloaded_value timer3_preserved ]
 [p mainexit ]
-"34 ./application.h
-[; ;./application.h: 34: void application_initialize(void);
-[v _application_initialize `(v ~T0 @X0 0 ef ]
-"33 ./ECU_layer/LED/ecu_led.h
-[; ;./ECU_layer/LED/ecu_led.h: 33: Std_ReturnType led_initialize(const led_t *led);
-[v _led_initialize `(uc ~T0 @X0 0 ef1`*CS274 ]
-"61 ./MCAL_layer/TIMER3/hal_timer3.h
-[; ;./MCAL_layer/TIMER3/hal_timer3.h: 61: Std_ReturnType Timer3_Init(const timer3_config_t *_timer);
-[v _Timer3_Init `(uc ~T0 @X0 0 ef1`*CS288 ]
-"63
-[; ;./MCAL_layer/TIMER3/hal_timer3.h: 63: Std_ReturnType Timer3_ReadVal(const timer3_config_t *_timer , uint16 *readVal);
-[v _Timer3_ReadVal `(uc ~T0 @X0 0 ef2`*CS288`*us ]
+"71 ./MCAL_layer/SPI/hal_spi.h
+[; ;./MCAL_layer/SPI/hal_spi.h: 71: Std_ReturnType SPI_Init(const SPI_Config *spi_obj );
+[v _SPI_Init `(uc ~T0 @X0 0 ef1`*CS299 ]
+"81 ./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h
+[; ;./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h: 81: Std_ReturnType gpio_pin_intialize (const pin_config_t *_pin_config);
+[v _gpio_pin_intialize `(uc ~T0 @X0 0 ef1`*CS273 ]
+"73 ./MCAL_layer/SPI/hal_spi.h
+[; ;./MCAL_layer/SPI/hal_spi.h: 73: Std_ReturnType SPI_Read_VAL(const SPI_Config *spi_obj ,uint8 *readVal );
+[v _SPI_Read_VAL `(uc ~T0 @X0 0 ef2`*CS299`*uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -440,124 +450,95 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"14 application.c
-[; ;application.c: 14: volatile uint32 timer3_flag= 0;
-[v _timer3_flag `Vui ~T0 @X0 1 e ]
-[i _timer3_flag
--> -> 0 `i `ui
-]
-"15
-[; ;application.c: 15: volatile uint16 timer3_counter_readVal;
-[v _timer3_counter_readVal `Vus ~T0 @X0 1 e ]
-"17
-[; ;application.c: 17: Std_ReturnType ret = (Std_ReturnType)0x00;
+"12 application.c
+[; ;application.c: 12: Std_ReturnType ret = (Std_ReturnType)0x00;
 [v _ret `uc ~T0 @X0 1 e ]
 [i _ret
 -> -> 0 `i `uc
 ]
-"18
-[; ;application.c: 18: led_t led1={.port_name = PORTD_INDEX , .pin = GPIO_PIN0 , .led_status = GPIO_LOW};
-[v _led1 `S274 ~T0 @X0 1 e ]
-[i _led1
+"14
+[; ;application.c: 14: uint8 test_recieve = 0;
+[v _test_recieve `uc ~T0 @X0 1 e ]
+[i _test_recieve
+-> -> 0 `i `uc
+]
+"16
+[; ;application.c: 16: SPI_Config test_spi = {
+[v _test_spi `S299 ~T0 @X0 1 e ]
+[i _test_spi
+:U ..
+:U ..
+-> -> 0 `i `*F3546
+-> -> 0 `i `E3194
+. `E3512 5
+:U ..
+:U ..
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+..
+..
+..
+]
+"23
+[; ;application.c: 23: pin_config_t D0 ={
+[v _D0 `S273 ~T0 @X0 1 e ]
+[i _D0
 :U ..
 :U ..
 -> . `E2999 3 `uc
 -> . `E2989 0 `uc
+-> . `E2985 0 `uc
 -> . `E2981 0 `uc
 ..
 ..
 ]
-"20
-[; ;application.c: 20: void Timer3_DefaultInterruptHandler(void){
-[v _Timer3_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
-{
-[e :U _Timer3_DefaultInterruptHandler ]
-[f ]
-"21
-[; ;application.c: 21:     timer3_flag++;
-[e ++ _timer3_flag -> -> 1 `i `Vui ]
-"22
-[; ;application.c: 22: }
-[e :UE 289 ]
-}
-"24
-[; ;application.c: 24: timer3_config_t timer3_obj = {
-[v _timer3_obj `S288 ~T0 @X0 1 e ]
-[i _timer3_obj
-:U ..
-:U ..
-&U _Timer3_DefaultInterruptHandler
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 2 `i `uc
--> -> 1 `i `uc
--> -> 15536 `i `uc
-..
-..
-]
-"32
-[; ;application.c: 32: timer3_config_t counter_obj = {
-[v _counter_obj `S288 ~T0 @X0 1 e ]
-[i _counter_obj
-:U ..
-:U ..
-&U _Timer3_DefaultInterruptHandler
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
-..
-..
-]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"42
-[; ;application.c: 42: int main() {
+"32
+[; ;application.c: 32: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"44
-[; ;application.c: 44:     application_initialize();
-[e ( _application_initialize ..  ]
-"45
-[; ;application.c: 45:     ret = led_initialize(&led1);
-[e = _ret ( _led_initialize (1 -> &U _led1 `*CS274 ]
-"46
-[; ;application.c: 46:     ret = Timer3_Init(&counter_obj);
-[e = _ret ( _Timer3_Init (1 -> &U _counter_obj `*CS288 ]
-"49
-[; ;application.c: 49:     while(1){
-[e :U 292 ]
+"34
+[; ;application.c: 34:     ret = SPI_Init(&test_spi);
+[e = _ret ( _SPI_Init (1 -> &U _test_spi `*CS299 ]
+"35
+[; ;application.c: 35:     ret = gpio_pin_intialize(&D0);
+[e = _ret ( _gpio_pin_intialize (1 -> &U _D0 `*CS273 ]
+"37
+[; ;application.c: 37:     while(1){
+[e :U 302 ]
 {
-"51
-[; ;application.c: 51:         ret = Timer3_ReadVal(&counter_obj ,&timer3_counter_readVal );
-[e = _ret ( _Timer3_ReadVal (2 , -> &U _counter_obj `*CS288 -> &U _timer3_counter_readVal `*us ]
-"53
-[; ;application.c: 53:    }
+"38
+[; ;application.c: 38:         ret = SPI_Read_VAL(&test_spi , &test_recieve);
+[e = _ret ( _SPI_Read_VAL (2 , -> &U _test_spi `*CS299 &U _test_recieve ]
+"39
+[; ;application.c: 39:    }
 }
-[e :U 291 ]
-[e $U 292  ]
-[e :U 293 ]
-"55
-[; ;application.c: 55:     return (0);
+[e :U 301 ]
+[e $U 302  ]
+[e :U 303 ]
+"41
+[; ;application.c: 41:     return (0);
 [e ) -> 0 `i ]
-[e $UE 290  ]
-"58
-[; ;application.c: 58: }
-[e :UE 290 ]
+[e $UE 300  ]
+"44
+[; ;application.c: 44: }
+[e :UE 300 ]
 }
-"62
-[; ;application.c: 62: void application_initialize(void){
+"48
+[; ;application.c: 48: void application_initialize(void){
 [v _application_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_initialize ]
 [f ]
-"63
-[; ;application.c: 63:     Std_ReturnType ret = (Std_ReturnType)0x01;
+"49
+[; ;application.c: 49:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"66
-[; ;application.c: 66: }
-[e :UE 294 ]
+"52
+[; ;application.c: 52: }
+[e :UE 304 ]
 }

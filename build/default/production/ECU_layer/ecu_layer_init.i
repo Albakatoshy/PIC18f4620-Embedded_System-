@@ -4720,11 +4720,11 @@ unsigned char __t3rd16on(void);
 
 typedef unsigned char uint8;
 typedef unsigned short uint16;
-typedef unsigned int uint32;
+typedef unsigned long uint32;
 
 typedef signed char sint8;
 typedef signed short sint16;
-typedef signed int sint32;
+typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
 # 14 "ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 2
@@ -4966,7 +4966,6 @@ Std_ReturnType convert_int_to_string(uint32 val , uint8 *str);
 
 void ecu_layer_initialize(void);
 # 2 "ECU_layer/ecu_layer_init.c" 2
-
 
 
 chr_lcd_4bit_t lcd1 = {

@@ -8,48 +8,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "application.h"
-
-#define _XTAL_FREQ 8000000  // 4 MHz clock
-
-volatile uint32 timer3_flag= 0;
-volatile uint16 timer3_counter_readVal;
-
+#include "MCAL_layer/SPI/hal_spi.h"
 Std_ReturnType ret = E_NOT_OK;
-led_t led1={.port_name = PORTD_INDEX , .pin = GPIO_PIN0 , .led_status  = GPIO_LOW};
 
-void Timer3_DefaultInterruptHandler(void){
-    timer3_flag++;
-}
+uint8 test_recieve = ZERO_INIT;
 
-timer3_config_t timer3_obj = {
-  .TIMER3_InterruptHandler = Timer3_DefaultInterruptHandler ,
-  .timer3_Prescaler_val    = TIMER3_PRESCALER_DIV_4_CFG,
-  .timer3_mode             = TIMER3_TIMER_MODE_CONFIG,
-  .timer3_read_write_mode  = TIMER3_READ_WRITE_16_BIT_MODE_CFG,
-  .timer3_preloaded_value  = 15536,
+SPI_Config test_spi = {
+    .spi_config.ClockPolarity = SPI_CLOCK_POLARITY_HIGH_LEVEL_CFG,
+    .spi_config.ClockSelect   = SPI_CLOCK_SELECT_ACTIVE_TO_IDLE_CFG,
+    .spi_config.SampleSelect  = SPI_DATA_SAMPLED_AT_END_OF_DATA_CFG,
+    .spi_mode                 =  SPI_SLAVE_MODE_FOSC_SS_DISABLED ,
 };
 
-timer3_config_t counter_obj = {
-  .TIMER3_InterruptHandler = Timer3_DefaultInterruptHandler ,
-  .timer3_Prescaler_val    = TIMER3_PRESCALER_DIV_1_CFG,
-  .timer3_mode             = TIMER3_COUNTER_MODE_CONFIG,
-  .timer3_counter_Synchronization_select = TIMER3_SYNCHRONOUS_COUNTER_CFG,
-  .timer3_read_write_mode  = TIMER3_READ_WRITE_16_BIT_MODE_CFG,
-  .timer3_preloaded_value  = 0,
-};
+pin_config_t D0 ={
+  .direction = GPIO_DIRECTION_OUTPUT ,
+  .logic     = GPIO_LOW,
+  .pin       = GPIO_PIN0,
+  .port      = PORTD_INDEX,
+}; 
+
 
 
 int main() {
     
-    application_initialize();
-    ret = led_initialize(&led1);
-    ret = Timer3_Init(&counter_obj);
-    
+    ret = SPI_Init(&test_spi);
+    ret = gpio_pin_intialize(&D0);
     
     while(1){
-       
-        ret = Timer3_ReadVal(&counter_obj ,&timer3_counter_readVal );
-       
+        ret = SPI_Read_VAL(&test_spi , &test_recieve);
    }
     
     return (EXIT_SUCCESS);
@@ -64,7 +50,11 @@ void application_initialize(void){
     
     
 }
-        
+
+
+
+
+
 
 
        

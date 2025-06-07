@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o
+ C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o
  -Odist/default/production\application.production.hex
  -logfile=dist/default/production\application.production.hxl
  -addressing=1
@@ -9,23 +9,23 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o)
-  8h - 11h		(C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o)
-  1000h - 1014h		(C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o)
-  1016h - 1856h		(C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o)
-  1858h - 1949h		(C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o)
+  0h - 3h		(C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o)
+  8h - 11h		(C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o)
+  1000h - 1014h		(C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o)
+  1016h - 1876h		(C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o)
+  1878h - 19DBh		(C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
   12h - FFFh
   1015h - 1015h
-  1857h - 1857h
-  194Ah - 2FFFFFh
+  1877h - 1877h
+  19DCh - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\anaal\AppData\Local\Temp\xcBstk4.1\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\anaal\AppData\Local\Temp\xcAsrsk.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -165,9 +165,9 @@
 00001820 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001830 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001840 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001850 | H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1
+00001850 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001860 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001870 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001870 | H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1
 00001880 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001890 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000018A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -180,7 +180,16 @@
 00001910 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001920 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001930 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001940 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+00001940 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001950 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001960 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001970 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001980 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001990 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000019A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000019B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000019C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000019D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
 ----------------------------------------------------------
 00300000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 00300010 | --

@@ -4729,11 +4729,11 @@ unsigned char __t3rd16on(void);
 
 typedef unsigned char uint8;
 typedef unsigned short uint16;
-typedef unsigned int uint32;
+typedef unsigned long uint32;
 
 typedef signed char sint8;
 typedef signed short sint16;
-typedef signed int sint32;
+typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
 # 14 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 2
@@ -5224,51 +5224,210 @@ Std_ReturnType Timer3_DeInit(const timer3_config_t *_timer);
 Std_ReturnType Timer3_ReadVal(const timer3_config_t *_timer , uint16 *readVal);
 Std_ReturnType Timer3_WriteVal(const timer3_config_t *_timer , uint16 writeVal);
 # 23 "./application.h" 2
-# 34 "./application.h"
+# 1 "./MCAL_layer/CCP/hal_ccp.h" 1
+# 17 "./MCAL_layer/CCP/hal_ccp.h"
+# 1 "./MCAL_layer/CCP/hal_ccp_cfg.h" 1
+# 18 "./MCAL_layer/CCP/hal_ccp.h" 2
+# 70 "./MCAL_layer/CCP/hal_ccp.h"
+typedef enum{
+    CCP1_INST,
+    CCP2_INST
+}ccp_inst_t;
+
+typedef enum{
+    CCP_CAPTURE_MODE_SELECT = 0,
+    CCP_COMPARE_MODE_SELECT ,
+    CCP_PWM_MODE_SELECT ,
+
+}ccp_mode_t;
+
+typedef union{
+    struct{
+        uint8 ccpr_low;
+        uint8 ccpr_high;
+    };
+    struct{
+        uint16 ccpr_16Bit;
+    };
+}CCP_REG_T;
+
+typedef enum{
+    CCP1_CCP2_TIMER1 = 0 ,
+    CCP1_TIMER1_CCP2_TIMER3 ,
+    CCP1_CCP2_TIMER3 ,
+}ccp_capture_timer_select_t;
+
+typedef struct{
+
+    void (*CCP1_IntrerruptHandler)(void);
+
+
+
+
+
+    void (*CCP2_IntrerruptHandler)(void);
+
+
+
+
+    ccp_inst_t ccp_inst_select;
+    ccp_mode_t ccp_mode_select;
+    uint8 ccp_mode_behavior;
+    pin_config_t pin;
+    ccp_capture_timer_select_t ccp_capture_timer_select;
+# 124 "./MCAL_layer/CCP/hal_ccp.h"
+}ccp_config_t;
+
+
+
+Std_ReturnType CCP_Init(const ccp_config_t *ccp_obj);
+Std_ReturnType CCP_DeInit(const ccp_config_t *ccp_obj);
+
+
+Std_ReturnType CCP_IsCapturedDataReady(uint8 *_capture_status);
+Std_ReturnType CCP_Capture_Mode_Read_Value(uint16 *_capture_value);
+
+
+
+Std_ReturnType CCP_IsCompareDone(const ccp_config_t *ccp_obj ,uint8 *_compare_status);
+Std_ReturnType CCP_Compare_Mode_Set_Value(const ccp_config_t *ccp_obj , uint16 compare_value);
+# 24 "./application.h" 2
+# 1 "./MCAL_layer/USART/hal_usart.h" 1
+# 19 "./MCAL_layer/USART/hal_usart.h"
+# 1 "./MCAL_layer/USART/hal_usart_cfg.h" 1
+# 20 "./MCAL_layer/USART/hal_usart.h" 2
+# 82 "./MCAL_layer/USART/hal_usart.h"
+typedef enum {
+    BAUDRATE_ASYNC_8BIT_LOW_SPEED ,
+    BAUDRATE_ASYNC_8BIT_HIGH_SPEED ,
+    BAUDRATE_ASYNC_16BIT_LOW_SPEED ,
+    BAUDRATE_ASYNC_16BIT_HIGH_SPEED ,
+    BAUDRATE_SYNC_8BIT ,
+    BAUDRATE_SYNC_16BIT ,
+}baudrate_gen_t;
+
+typedef struct {
+    uint8 usart_tx_reserved :4;
+    uint8 usart_tx_enable :1;
+    uint8 usart_tx_interrupt_enable :1;
+    uint8 usart_tx_9bit_enable :1;
+
+
+
+}usart_tx_cfg_t;
+
+typedef struct {
+    uint8 usart_rx_reserved :4;
+    uint8 usart_rx_enable :1;
+    uint8 usart_rx_interrupt_enable :1;
+    uint8 usart_rx_9bit_enable :1;
+
+
+
+}usart_rx_cfg_t;
+
+typedef union{
+   struct{
+       uint8 usart_ferr :1;
+       uint8 usart_oerr :1;
+       uint8 usart_tx_reserved :6;
+
+   };
+   uint8 status;
+}usart_error_status_t;
+
+typedef struct {
+    uint8 usart_mode_selection;
+    uint32 baudrate;
+    baudrate_gen_t baudrate_gen_cfg;
+    usart_tx_cfg_t usart_tx_cfg;
+    usart_rx_cfg_t usart_rx_cfg;
+
+    void(*EUSART_TxInterruptHandler)(void);
+    void(*EUSART_RxInterruptHandler)(void);
+    void(*EUSART_FramingErrorHandler)(void);
+    void(*EUSART_OverrunHandler)(void);
+
+}usart_t;
+
+
+
+Std_ReturnType EUSART_Init(const usart_t *_usart_obj);
+Std_ReturnType EUSART_DeInit(const usart_t *_usart_obj);
+Std_ReturnType EUSART_ReadByteBlocking(const usart_t *_usart_obj , uint8 *_data);
+Std_ReturnType EUSART_ReadByteNoBlocking(uint8 *_data);
+Std_ReturnType EUSART_RX_Restart(void);
+Std_ReturnType EUSART_WriteByteBlocking(uint8 _data);
+Std_ReturnType EUSART_WriteSrtingBlocking(uint8 *_data , uint8 str_len);
+Std_ReturnType EUSART_WriteByteNoBlocking(uint8 _data);
+Std_ReturnType EUSART_WriteSrtingNoBlocking(uint8 *_data , uint8 str_len);
+# 25 "./application.h" 2
+# 36 "./application.h"
 void application_initialize(void);
 # 11 "application.c" 2
+# 1 "./MCAL_layer/SPI/hal_spi.h" 1
+# 42 "./MCAL_layer/SPI/hal_spi.h"
+typedef enum {
+    SPI_MASTER_MODE_FOSC_DIV_4 = 0 ,
+    SPI_MASTER_MODE_FOSC_DIV_16 ,
+    SPI_MASTER_MODE_FOSC_DIV_64 ,
+    SPI_MASTER_MODE_FOSC_TMR2_DIV_2 ,
+    SPI_SLAVE_MODE_FOSC_SS_ENABLED ,
+    SPI_SLAVE_MODE_FOSC_SS_DISABLED ,
+
+}spi_mode_select_t;
+
+
+typedef struct{
+    uint8 ClockPolarity : 2;
+    uint8 SampleSelect : 2;
+    uint8 ClockSelect : 2;
+    uint8 Reserved : 2;
+}SPI_Control_Config;
+
+typedef struct{
+
+    void (* MSSP_SPI_InterruptHandler)(void);
+    interrupt_priority_cfg priority;
+
+    spi_mode_select_t spi_mode;
+    SPI_Control_Config spi_config;
+}SPI_Config;
 
 
 
-volatile uint32 timer3_flag= 0;
-volatile uint16 timer3_counter_readVal;
-
+Std_ReturnType SPI_Init(const SPI_Config *spi_obj );
+Std_ReturnType SPI_DeInit(const SPI_Config *spi_obj );
+Std_ReturnType SPI_Read_VAL(const SPI_Config *spi_obj ,uint8 *readVal );
+Std_ReturnType SPI_Write_VAL(const SPI_Config *spi_obj ,uint8 WriteVal );
+# 12 "application.c" 2
 Std_ReturnType ret = (Std_ReturnType)0x00;
-led_t led1={.port_name = PORTD_INDEX , .pin = GPIO_PIN0 , .led_status = GPIO_LOW};
 
-void Timer3_DefaultInterruptHandler(void){
-    timer3_flag++;
-}
+uint8 test_recieve = 0;
 
-timer3_config_t timer3_obj = {
-  .TIMER3_InterruptHandler = Timer3_DefaultInterruptHandler ,
-  .timer3_Prescaler_val = 2,
-  .timer3_mode = 0,
-  .timer3_read_write_mode = 1,
-  .timer3_preloaded_value = 15536,
+SPI_Config test_spi = {
+    .spi_config.ClockPolarity = 1,
+    .spi_config.ClockSelect = 1,
+    .spi_config.SampleSelect = 1,
+    .spi_mode = SPI_SLAVE_MODE_FOSC_SS_DISABLED ,
 };
 
-timer3_config_t counter_obj = {
-  .TIMER3_InterruptHandler = Timer3_DefaultInterruptHandler ,
-  .timer3_Prescaler_val = 0,
-  .timer3_mode = 1,
-  .timer3_counter_Synchronization_select = 0,
-  .timer3_read_write_mode = 1,
-  .timer3_preloaded_value = 0,
+pin_config_t D0 ={
+  .direction = GPIO_DIRECTION_OUTPUT ,
+  .logic = GPIO_LOW,
+  .pin = GPIO_PIN0,
+  .port = PORTD_INDEX,
 };
+
 
 
 int main() {
 
-    application_initialize();
-    ret = led_initialize(&led1);
-    ret = Timer3_Init(&counter_obj);
-
+    ret = SPI_Init(&test_spi);
+    ret = gpio_pin_intialize(&D0);
 
     while(1){
-
-        ret = Timer3_ReadVal(&counter_obj ,&timer3_counter_readVal );
-
+        ret = SPI_Read_VAL(&test_spi , &test_recieve);
    }
 
     return (0);
