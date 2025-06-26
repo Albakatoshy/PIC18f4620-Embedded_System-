@@ -72,4 +72,8 @@ MCAL_layer/USART/hal_usart_cfg.h  \
 MCAL_layer/SPI/hal_spi.h  \
 MCAL_layer/SPI/../GPIO/hal_gpio.h  \
 MCAL_layer/SPI/../GPIO/mcal_std_types.h  \
-MCAL_layer/SPI/../Interrupt/mcal_internal_interrupt.h 
+MCAL_layer/SPI/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/I2C/hal_i2c.h  \
+MCAL_layer/I2C/../GPIO/hal_gpio.h  \
+MCAL_layer/I2C/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_layer/I2C/../GPIO/mcal_std_types.h 

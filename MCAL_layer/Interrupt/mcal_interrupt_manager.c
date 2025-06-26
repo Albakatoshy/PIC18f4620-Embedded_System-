@@ -169,6 +169,14 @@ void __interrupt() InterruptManager(void){
     }
     else{/*NOTHING*/}
     
+    if((INTERRUPT_ENABLE == PIE1bits.SSPIE) && (INTERRUPT_OCCUR == PIR1bits.SSPIF)){
+        MSSP_I2C_ISR();
+    }
+    else{ /* Nothing */ }
+    if((INTERRUPT_ENABLE == PIE2bits.BCLIE) && (INTERRUPT_OCCUR == PIR2bits.BCLIF)){
+        MSSP_I2C_BC_ISR();
+    }
+    
 }
 #endif
 

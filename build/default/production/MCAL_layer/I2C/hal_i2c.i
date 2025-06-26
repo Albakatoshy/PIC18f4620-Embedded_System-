@@ -1,4 +1,4 @@
-# 1 "MCAL_layer/Interrupt/mcal_interrupt_manager.c"
+# 1 "MCAL_layer/I2C/hal_i2c.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 285 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MCAL_layer/Interrupt/mcal_interrupt_manager.c" 2
+# 1 "MCAL_layer/I2C/hal_i2c.c" 2
 
 
 
@@ -14,11 +14,10 @@
 
 
 
-
-# 1 "MCAL_layer/Interrupt/mcal_interrupt_manager.h" 1
-# 14 "MCAL_layer/Interrupt/mcal_interrupt_manager.h"
-# 1 "MCAL_layer/Interrupt/mcal_interrupt_config.h" 1
-# 12 "MCAL_layer/Interrupt/mcal_interrupt_config.h"
+# 1 "MCAL_layer/I2C/hal_i2c.h" 1
+# 12 "MCAL_layer/I2C/hal_i2c.h"
+# 1 "MCAL_layer/I2C/../GPIO/hal_gpio.h" 1
+# 12 "MCAL_layer/I2C/../GPIO/hal_gpio.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\\pic\\include\\proc/pic18f4620.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\\pic\\include\\proc/pic18f4620.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/__at.h" 1 3
@@ -4231,11 +4230,11 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "MCAL_layer/Interrupt/mcal_interrupt_config.h" 2
-# 1 "MCAL_layer/Interrupt/../GPIO/mcal_std_types.h" 1
-# 12 "MCAL_layer/Interrupt/../GPIO/mcal_std_types.h"
-# 1 "MCAL_layer/Interrupt/../GPIO/../std_libraries.h" 1
-# 12 "MCAL_layer/Interrupt/../GPIO/../std_libraries.h"
+# 13 "MCAL_layer/I2C/../GPIO/hal_gpio.h" 2
+# 1 "MCAL_layer/I2C/../GPIO/mcal_std_types.h" 1
+# 12 "MCAL_layer/I2C/../GPIO/mcal_std_types.h"
+# 1 "MCAL_layer/I2C/../GPIO/../std_libraries.h" 1
+# 12 "MCAL_layer/I2C/../GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
 
 
@@ -4406,7 +4405,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_layer/Interrupt/../GPIO/../std_libraries.h" 2
+# 13 "MCAL_layer/I2C/../GPIO/../std_libraries.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
@@ -4484,7 +4483,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_layer/Interrupt/../GPIO/../std_libraries.h" 2
+# 14 "MCAL_layer/I2C/../GPIO/../std_libraries.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
@@ -4542,10 +4541,10 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "MCAL_layer/Interrupt/../GPIO/../std_libraries.h" 2
-# 13 "MCAL_layer/Interrupt/../GPIO/mcal_std_types.h" 2
-# 1 "MCAL_layer/Interrupt/../GPIO/../compiler.h" 1
-# 11 "MCAL_layer/Interrupt/../GPIO/../compiler.h"
+# 15 "MCAL_layer/I2C/../GPIO/../std_libraries.h" 2
+# 13 "MCAL_layer/I2C/../GPIO/mcal_std_types.h" 2
+# 1 "MCAL_layer/I2C/../GPIO/../compiler.h" 1
+# 11 "MCAL_layer/I2C/../GPIO/../compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4715,8 +4714,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 12 "MCAL_layer/Interrupt/../GPIO/../compiler.h" 2
-# 14 "MCAL_layer/Interrupt/../GPIO/mcal_std_types.h" 2
+# 12 "MCAL_layer/I2C/../GPIO/../compiler.h" 2
+# 14 "MCAL_layer/I2C/../GPIO/mcal_std_types.h" 2
 
 
 
@@ -4733,16 +4732,12 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 14 "MCAL_layer/Interrupt/mcal_interrupt_config.h" 2
-# 1 "MCAL_layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 15 "MCAL_layer/Interrupt/mcal_interrupt_config.h" 2
-# 1 "MCAL_layer/Interrupt/../GPIO/hal_gpio.h" 1
-# 14 "MCAL_layer/Interrupt/../GPIO/hal_gpio.h"
-# 1 "MCAL_layer/Interrupt/../GPIO/../device_config.h" 1
-# 15 "MCAL_layer/Interrupt/../GPIO/hal_gpio.h" 2
-# 1 "MCAL_layer/Interrupt/../GPIO/hal_gpio_cfg.h" 1
-# 16 "MCAL_layer/Interrupt/../GPIO/hal_gpio.h" 2
-# 36 "MCAL_layer/Interrupt/../GPIO/hal_gpio.h"
+# 14 "MCAL_layer/I2C/../GPIO/hal_gpio.h" 2
+# 1 "MCAL_layer/I2C/../GPIO/../device_config.h" 1
+# 15 "MCAL_layer/I2C/../GPIO/hal_gpio.h" 2
+# 1 "MCAL_layer/I2C/../GPIO/hal_gpio_cfg.h" 1
+# 16 "MCAL_layer/I2C/../GPIO/hal_gpio.h" 2
+# 36 "MCAL_layer/I2C/../GPIO/hal_gpio.h"
 typedef enum{
     GPIO_LOW=0,
     GPIO_HIGH
@@ -4796,161 +4791,341 @@ Std_ReturnType gpio_port_get_direction_status (port_index_t port,uint8 *dir_stat
 Std_ReturnType gpio_port_write_logic (port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic (port_index_t port, uint8 *logic);
 Std_ReturnType gpio_port_toggle_logic (port_index_t port);
-# 16 "MCAL_layer/Interrupt/mcal_interrupt_config.h" 2
-# 60 "MCAL_layer/Interrupt/mcal_interrupt_config.h"
+# 13 "MCAL_layer/I2C/hal_i2c.h" 2
+
+# 1 "MCAL_layer/I2C/../Interrupt/mcal_internal_interrupt.h" 1
+# 14 "MCAL_layer/I2C/../Interrupt/mcal_internal_interrupt.h"
+# 1 "MCAL_layer/I2C/../Interrupt/mcal_interrupt_config.h" 1
+# 14 "MCAL_layer/I2C/../Interrupt/mcal_interrupt_config.h"
+# 1 "MCAL_layer/I2C/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 15 "MCAL_layer/I2C/../Interrupt/mcal_interrupt_config.h" 2
+# 60 "MCAL_layer/I2C/../Interrupt/mcal_interrupt_config.h"
 typedef enum{
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY,
 
 }interrupt_priority_cfg;
-# 15 "MCAL_layer/Interrupt/mcal_interrupt_manager.h" 2
-# 24 "MCAL_layer/Interrupt/mcal_interrupt_manager.h"
-void INT0_ISR(void);
-void INT1_ISR(void);
-void INT2_ISR(void);
-void RB4_ISR(uint8 RB4_Source);
-void RB5_ISR(uint8 RB5_Source);
-void RB6_ISR(uint8 RB6_Source);
-void RB7_ISR(uint8 RB7_Source);
-void ADC_ISR(void);
-void TIMER0_ISR(void);
-void TIMER1_ISR(void);
-void TIMER2_ISR(void);
-void TIMER3_ISR(void);
-void CCP1_ISR(void);
-void CCP2_ISR(void);
-void EUSART_Tx_ISR(void);
-void EUSART_Rx_ISR(void);
-void SPI_ISR(void);
-void MSSP_I2C_ISR(void);
-void MSSP_I2C_BC_ISR(void);
-# 10 "MCAL_layer/Interrupt/mcal_interrupt_manager.c" 2
+# 15 "MCAL_layer/I2C/../Interrupt/mcal_internal_interrupt.h" 2
+# 15 "MCAL_layer/I2C/hal_i2c.h" 2
+# 77 "MCAL_layer/I2C/hal_i2c.h"
+typedef struct{
+ uint8 i2c_mode_cfg;
+    uint8 i2c_slave_address;
+ uint8 i2c_mode : 1;
+ uint8 i2c_slew_rate : 1;
+ uint8 i2c_SMBus_control : 1;
+ uint8 i2c_general_call : 1;
+ uint8 i2c_master_rec_mode : 1;
+ uint8 i2c_reserved : 3;
 
-static volatile uint8 RB4_FLAG = 1 ;
-static volatile uint8 RB5_FLAG = 1 ;
-static volatile uint8 RB6_FLAG = 1 ;
-static volatile uint8 RB7_FLAG = 1 ;
-# 58 "MCAL_layer/Interrupt/mcal_interrupt_manager.c"
-void __attribute__((picinterrupt(("")))) InterruptManager(void){
-    if((1 == INTCONbits.INT0IE) && (1 == INTCONbits.INT0IF)){
-        INT0_ISR();
-    }
-    else{ }
+    interrupt_priority_cfg mssp_i2c_priority;
+    interrupt_priority_cfg mssp_i2c_bc_priority;
 
-    if((1 == INTCON3bits.INT1IE) && (1 == INTCON3bits.INT1IF)){
-        INT1_ISR();
-    }
-    else{ }
+}i2c_configs_t;
 
-    if((1 == INTCON3bits.INT2IE) && (1 == INTCON3bits.INT2IF)){
-        INT2_ISR();
-    }
-    else{ }
+typedef struct{
+ uint32 i2c_clock;
+    i2c_configs_t i2c_cfg;
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB4 == GPIO_HIGH)&& (RB4_FLAG == 1)){
-        RB4_FLAG = 0;
-        RB4_ISR(0);
-    }
-    else{ }
+    void (*I2C_Report_Write_Collision)(void);
+    void (*I2C_DefaultInterruptHandler)(void);
+    void (*I2C_Report_Receive_Overflow)(void);
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB4 == GPIO_LOW) && (RB4_FLAG == 0)){
-        RB4_FLAG = 1;
-        RB4_ISR(1);
-    }
-    else{ }
+}mssp_i2c_t;
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB5 == GPIO_HIGH) && (RB5_FLAG == 1)){
-        RB5_FLAG=0;
-        RB5_ISR(0);
-    }
-    else{ }
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB5 == GPIO_LOW) && (RB5_FLAG == 0)){
-        RB5_FLAG=1;
-        RB5_ISR(1);
-    }
-    else{ }
+Std_ReturnType MSSP_I2C_Init(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_DeInit(const mssp_i2c_t *i2c_obj);
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB6 == GPIO_HIGH)&& (RB6_FLAG == 1)){
-        RB6_FLAG=0;
-        RB6_ISR(0);
-    }
-    else{ }
+Std_ReturnType MSSP_I2C_Master_Send_Start(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_Master_Send_Repeated_Start(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_Master_Send_Stop(const mssp_i2c_t *i2c_obj);
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB6 == GPIO_LOW)&& (RB6_FLAG == 0)){
-        RB6_FLAG=1;
-        RB6_ISR(1);
-    }
-    else{ }
+Std_ReturnType MSSP_I2C_Master_Write_Blocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack);
+Std_ReturnType MSSP_I2C_Master_Read_Blocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data);
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB7 == GPIO_HIGH)&& (RB7_FLAG == 1)){
-        RB7_FLAG=0;
-        RB7_ISR(0);
-    }
-    else{ }
+Std_ReturnType MSSP_I2C_Master_Write_NBlocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack);
+Std_ReturnType MSSP_I2C_Master_Read_NBlocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data);
+# 9 "MCAL_layer/I2C/hal_i2c.c" 2
 
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB7 == GPIO_LOW)&& (RB7_FLAG == 0)){
-        RB7_FLAG=1;
-        RB7_ISR(1);
-    }
-    else{ }
+static __attribute__((inline)) void MSSP_I2C_Mode_GPIO_CFG(void);
+static __attribute__((inline)) void I2C_Master_Mode_Clock_Configurations(const mssp_i2c_t *i2c_obj);
+static __attribute__((inline)) void I2C_Slave_Mode_Configurations(const mssp_i2c_t *i2c_obj);
+static __attribute__((inline)) void MSSP_I2C_Interrupt_Configurations(const mssp_i2c_t *i2c_obj);
 
-    if((1 == (PIE1bits.ADIE)) && (1 == (PIR1bits.ADIF) )){
-        ADC_ISR();
-    }
-    else{ }
 
-    if((1 == (INTCONbits.TMR0IE)) && (1 ==(INTCONbits.TMR0IF)) ){
-        TIMER0_ISR();
-    }
-    else{ }
+static void (*I2C_Report_Write_Collision_InterruptHandler)(void) = ((void*)0);
+static void (*I2C_DefaultInterruptHandle)(void) = ((void*)0);
+static void (*I2C_Report_Receive_Overflow_InterruptHandle)(void) = ((void*)0);
 
-    if((1 == (PIE1bits.TMR1IE)) && (1 == (PIR1bits.TMR1IF))){
-        TIMER1_ISR();
-    }
-    else{ }
 
-    if((1 == (PIE1bits.TMR2IE)) && (1 == (PIR1bits.TMR2IF))){
-        TIMER2_ISR();
+Std_ReturnType MSSP_I2C_Init(const mssp_i2c_t *i2c_obj){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if(((void*)0) == i2c_obj){
+        ret = (Std_ReturnType)0x00;
     }
-    else{ }
+    else{
 
-    if ((1 == (PIE2bits.TMR3IE)) && (1 == (PIR2bits.TMR3IF))){
-        TIMER3_ISR();
-    }
-    else{ }
+        (SSPCON1bits.SSPEN = 0);
 
-    if ((1 == (PIE1bits.CCP1IE)) && (1 == (PIR1bits.CCP1IF))){
-        CCP1_ISR();
-    }
-    else{ }
+        if(1 == i2c_obj->i2c_cfg.i2c_mode){
 
-    if ((1 == (PIE2bits.CCP2IE)) && (1 == (PIR2bits.CCP2IF))){
-        CCP2_ISR();
-    }
-    else{ }
+            I2C_Master_Mode_Clock_Configurations(i2c_obj);
+        }
+        else if(0 == i2c_obj->i2c_cfg.i2c_mode){
 
-    if ((1 == (PIE1bits.TXIE)) && (1 == (PIR1bits.TXIF))){
-        EUSART_Tx_ISR();
-    }
-    else{ }
+            if(1 == i2c_obj->i2c_cfg.i2c_general_call){
+                (SSPCON2bits.GCEN = 1);
+            }
+            else if(0 == i2c_obj->i2c_cfg.i2c_general_call){
+                (SSPCON2bits.GCEN = 0);
+            }
+            else { }
 
-    if ((1 == (PIE1bits.RCIE)) && (1 == (PIR1bits.RCIF))){
-        EUSART_Rx_ISR();
-    }
-    else{ }
+            SSPCON1bits.WCOL = 0;
 
-    if ((1 == (PIE1bits.SSPIE)) && (1 == (PIR1bits.SSPIF))){
-        SPI_ISR();
-    }
-    else{ }
+            SSPCON1bits.SSPOV = 0;
 
-    if((1 == PIE1bits.SSPIE) && (1 == PIR1bits.SSPIF)){
-        MSSP_I2C_ISR();
+            SSPCON1bits.CKP = 1;
+
+            SSPADD = i2c_obj->i2c_cfg.i2c_slave_address;
+
+            I2C_Slave_Mode_Configurations(i2c_obj);
+        }
+        else { }
+
+        MSSP_I2C_Mode_GPIO_CFG();
+
+        if(1 == i2c_obj->i2c_cfg.i2c_slew_rate){
+            (SSPSTATbits.SMP = 1);
+        }
+        else if(0 == i2c_obj->i2c_cfg.i2c_slew_rate){
+            (SSPSTATbits.SMP = 0);
+        }
+        else { }
+
+        if(1 == i2c_obj->i2c_cfg.i2c_SMBus_control){
+            (SSPSTATbits.CKE = 1);
+        }
+        else if(0 == i2c_obj->i2c_cfg.i2c_SMBus_control){
+            (SSPSTATbits.CKE = 0);
+        }
+        else { }
+
+
+      MSSP_I2C_Interrupt_Configurations(i2c_obj);
+
+
+        (SSPCON1bits.SSPEN = 1);
+        ret = (Std_ReturnType)0x01;
     }
-    else{ }
-    if((1 == PIE2bits.BCLIE) && (1 == PIR2bits.BCLIF)){
-        MSSP_I2C_BC_ISR();
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_DeInit(const mssp_i2c_t *i2c_obj){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if(((void*)0) == i2c_obj){
+        ret = (Std_ReturnType)0x00;
     }
+    else{
+
+        (SSPCON1bits.SSPEN = 0);
+
+
+        (PIE1bits.SSPIE = 0);
+        (PIE2bits.BCLIE = 0);
+
+        ret = (Std_ReturnType)0x01;
+    }
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_Master_Send_Start(const mssp_i2c_t *i2c_obj){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if(((void*)0) == i2c_obj){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+
+        SSPCON2bits.SEN = 1;
+
+        while(SSPCON2bits.SEN);
+
+        PIR1bits.SSPIF = 0;
+
+        if(1 == SSPSTATbits.S){
+            ret = (Std_ReturnType)0x01;
+        }
+        else{
+            ret = (Std_ReturnType)0x00;
+        }
+    }
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_Master_Send_Repeated_Start(const mssp_i2c_t *i2c_obj){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if(((void*)0) == i2c_obj){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+
+        SSPCON2bits.RSEN = 1;
+
+        while(SSPCON2bits.RSEN);
+
+        PIR1bits.SSPIF = 0;
+        ret = (Std_ReturnType)0x01;
+    }
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_Master_Send_Stop(const mssp_i2c_t *i2c_obj){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if(((void*)0) == i2c_obj){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+
+        SSPCON2bits.PEN = 1;
+
+        while(SSPCON2bits.PEN);
+
+        PIR1bits.SSPIF = 0;
+
+        if(1 == SSPSTATbits.P){
+            ret = (Std_ReturnType)0x01;
+        }
+        else{
+            ret = (Std_ReturnType)0x00;
+        }
+    }
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_Master_Write_Blocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if((((void*)0) == i2c_obj) || (((void*)0) == _ack)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+
+        SSPBUF = i2c_data;
+
+        while(SSPSTATbits.BF);
+
+        PIR1bits.SSPIF = 0;
+
+        if(0 == SSPCON2bits.ACKSTAT){
+            *_ack = 0;
+        }
+        else{
+            *_ack = 1;
+        }
+        ret = (Std_ReturnType)0x01;
+    }
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_Master_Write_NBlocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if((((void*)0) == i2c_obj) || (((void*)0) == _ack)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+
+    }
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_Master_Read_Blocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if((((void*)0) == i2c_obj) || (((void*)0) == i2c_data)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+
+        (SSPCON2bits.RCEN = 1);
+
+        while(!SSPSTATbits.BF);
+
+        *i2c_data = SSPBUF;
+
+        if(0 == ack){
+            SSPCON2bits.ACKDT = 0;
+
+            SSPCON2bits.ACKEN = 1;
+            while(SSPCON2bits.ACKEN);
+        }
+        else if(1 == ack){
+            SSPCON2bits.ACKDT = 1;
+
+            SSPCON2bits.ACKEN = 1;
+            while(SSPCON2bits.ACKEN);
+        }
+        else { }
+        ret = (Std_ReturnType)0x01;
+    }
+    return ret;
+}
+
+Std_ReturnType MSSP_I2C_Master_Read_NBlocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    if((((void*)0) == i2c_obj) || (((void*)0) == i2c_data)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+
+    }
+    return ret;
+}
+
+void MSSP_I2C_ISR(void){
+
+    (PIR1bits.SSPIF = 0);
+    if(I2C_DefaultInterruptHandle){
+        I2C_DefaultInterruptHandle();
+    }
+
+}
+
+void MSSP_I2C_BC_ISR(void){
+
+    (PIR2bits.BCLIF = 0);
+    if(I2C_Report_Write_Collision_InterruptHandler){
+        I2C_Report_Write_Collision_InterruptHandler();
+    }
+
+}
+
+static __attribute__((inline)) void MSSP_I2C_Mode_GPIO_CFG(void){
+    TRISCbits.TRISC3 = 1;
+    TRISCbits.TRISC4 = 1;
+}
+
+static __attribute__((inline)) void I2C_Master_Mode_Clock_Configurations(const mssp_i2c_t *i2c_obj){
+
+    SSPCON1bits.SSPM = i2c_obj->i2c_cfg.i2c_mode_cfg;
+    SSPADD = (uint8)(((8000000UL / 4.0) / i2c_obj->i2c_clock) - 1);
+}
+
+static __attribute__((inline)) void I2C_Slave_Mode_Configurations(const mssp_i2c_t *i2c_obj){
+    SSPCON1bits.SSPM = i2c_obj->i2c_cfg.i2c_mode_cfg;
+}
+
+static __attribute__((inline)) void MSSP_I2C_Interrupt_Configurations(const mssp_i2c_t *i2c_obj){
+
+        (PIE1bits.SSPIE = 1);
+        (PIE2bits.BCLIE = 1);
+        (PIR1bits.SSPIF = 0);
+        (PIR2bits.BCLIF = 0);
+        I2C_Report_Write_Collision_InterruptHandler = i2c_obj->I2C_Report_Write_Collision;
+        I2C_DefaultInterruptHandle = i2c_obj->I2C_DefaultInterruptHandler;
+        I2C_Report_Receive_Overflow_InterruptHandle = i2c_obj->I2C_Report_Receive_Overflow;
+# 311 "MCAL_layer/I2C/hal_i2c.c"
+        (INTCONbits.GIE=1);
+        (INTCONbits.PEIE=1);
+
+
 
 }

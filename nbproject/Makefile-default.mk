@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ecu_button.c ecu_dc_motor.c ECU_layer/keypad/ecu_keypad.c ECU_layer/LCD/ecu_chr_lcd.c ECU_layer/LED/ecu_led.c ECU_layer/relay/ecu_relay.c ECU_layer/seven_segment/ecu_seven_segment.c ECU_layer/ecu_layer_init.c MCAL_layer/ADC/hal_adc.c hal_ccp.c MCAL_layer/EEPROM/hal_eeprom.c MCAL_layer/GPIO/hal_gpio.c MCAL_layer/Interrupt/mcal_internal_interrupt.c MCAL_layer/Interrupt/mcal_external_interrupt.c MCAL_layer/Interrupt/mcal_interrupt_manager.c MCAL_layer/TIMER0/hal_timer0.c MCAL_layer/TIMER1/hal_timer1.c MCAL_layer/TIMER2/hal_timer2.c MCAL_layer/TIMER3/hal_timer3.c MCAL_layer/USART/hal_usart.c MCAL_layer/device_config.c application.c MCAL_layer/SPI/hal_spi.c
+SOURCEFILES_QUOTED_IF_SPACED=ecu_button.c ecu_dc_motor.c ECU_layer/keypad/ecu_keypad.c ECU_layer/LCD/ecu_chr_lcd.c ECU_layer/LED/ecu_led.c ECU_layer/relay/ecu_relay.c ECU_layer/seven_segment/ecu_seven_segment.c ECU_layer/ecu_layer_init.c MCAL_layer/ADC/hal_adc.c hal_ccp.c MCAL_layer/EEPROM/hal_eeprom.c MCAL_layer/GPIO/hal_gpio.c MCAL_layer/Interrupt/mcal_internal_interrupt.c MCAL_layer/Interrupt/mcal_external_interrupt.c MCAL_layer/Interrupt/mcal_interrupt_manager.c MCAL_layer/SPI/hal_spi.c MCAL_layer/TIMER0/hal_timer0.c MCAL_layer/TIMER1/hal_timer1.c MCAL_layer/TIMER2/hal_timer2.c MCAL_layer/TIMER3/hal_timer3.c MCAL_layer/USART/hal_usart.c MCAL_layer/device_config.c application.c MCAL_layer/I2C/hal_i2c.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ecu_button.p1 ${OBJECTDIR}/ecu_dc_motor.p1 ${OBJECTDIR}/ECU_layer/keypad/ecu_keypad.p1 ${OBJECTDIR}/ECU_layer/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/ECU_layer/LED/ecu_led.p1 ${OBJECTDIR}/ECU_layer/relay/ecu_relay.p1 ${OBJECTDIR}/ECU_layer/seven_segment/ecu_seven_segment.p1 ${OBJECTDIR}/ECU_layer/ecu_layer_init.p1 ${OBJECTDIR}/MCAL_layer/ADC/hal_adc.p1 ${OBJECTDIR}/hal_ccp.p1 ${OBJECTDIR}/MCAL_layer/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL_layer/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_internal_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_external_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1 ${OBJECTDIR}/MCAL_layer/TIMER1/hal_timer1.p1 ${OBJECTDIR}/MCAL_layer/TIMER2/hal_timer2.p1 ${OBJECTDIR}/MCAL_layer/TIMER3/hal_timer3.p1 ${OBJECTDIR}/MCAL_layer/USART/hal_usart.p1 ${OBJECTDIR}/MCAL_layer/device_config.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ecu_button.p1.d ${OBJECTDIR}/ecu_dc_motor.p1.d ${OBJECTDIR}/ECU_layer/keypad/ecu_keypad.p1.d ${OBJECTDIR}/ECU_layer/LCD/ecu_chr_lcd.p1.d ${OBJECTDIR}/ECU_layer/LED/ecu_led.p1.d ${OBJECTDIR}/ECU_layer/relay/ecu_relay.p1.d ${OBJECTDIR}/ECU_layer/seven_segment/ecu_seven_segment.p1.d ${OBJECTDIR}/ECU_layer/ecu_layer_init.p1.d ${OBJECTDIR}/MCAL_layer/ADC/hal_adc.p1.d ${OBJECTDIR}/hal_ccp.p1.d ${OBJECTDIR}/MCAL_layer/EEPROM/hal_eeprom.p1.d ${OBJECTDIR}/MCAL_layer/GPIO/hal_gpio.p1.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_internal_interrupt.p1.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_external_interrupt.p1.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1.d ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1.d ${OBJECTDIR}/MCAL_layer/TIMER1/hal_timer1.p1.d ${OBJECTDIR}/MCAL_layer/TIMER2/hal_timer2.p1.d ${OBJECTDIR}/MCAL_layer/TIMER3/hal_timer3.p1.d ${OBJECTDIR}/MCAL_layer/USART/hal_usart.p1.d ${OBJECTDIR}/MCAL_layer/device_config.p1.d ${OBJECTDIR}/application.p1.d ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ecu_button.p1 ${OBJECTDIR}/ecu_dc_motor.p1 ${OBJECTDIR}/ECU_layer/keypad/ecu_keypad.p1 ${OBJECTDIR}/ECU_layer/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/ECU_layer/LED/ecu_led.p1 ${OBJECTDIR}/ECU_layer/relay/ecu_relay.p1 ${OBJECTDIR}/ECU_layer/seven_segment/ecu_seven_segment.p1 ${OBJECTDIR}/ECU_layer/ecu_layer_init.p1 ${OBJECTDIR}/MCAL_layer/ADC/hal_adc.p1 ${OBJECTDIR}/hal_ccp.p1 ${OBJECTDIR}/MCAL_layer/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL_layer/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_internal_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_external_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1 ${OBJECTDIR}/MCAL_layer/TIMER1/hal_timer1.p1 ${OBJECTDIR}/MCAL_layer/TIMER2/hal_timer2.p1 ${OBJECTDIR}/MCAL_layer/TIMER3/hal_timer3.p1 ${OBJECTDIR}/MCAL_layer/USART/hal_usart.p1 ${OBJECTDIR}/MCAL_layer/device_config.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ecu_button.p1.d ${OBJECTDIR}/ecu_dc_motor.p1.d ${OBJECTDIR}/ECU_layer/keypad/ecu_keypad.p1.d ${OBJECTDIR}/ECU_layer/LCD/ecu_chr_lcd.p1.d ${OBJECTDIR}/ECU_layer/LED/ecu_led.p1.d ${OBJECTDIR}/ECU_layer/relay/ecu_relay.p1.d ${OBJECTDIR}/ECU_layer/seven_segment/ecu_seven_segment.p1.d ${OBJECTDIR}/ECU_layer/ecu_layer_init.p1.d ${OBJECTDIR}/MCAL_layer/ADC/hal_adc.p1.d ${OBJECTDIR}/hal_ccp.p1.d ${OBJECTDIR}/MCAL_layer/EEPROM/hal_eeprom.p1.d ${OBJECTDIR}/MCAL_layer/GPIO/hal_gpio.p1.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_internal_interrupt.p1.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_external_interrupt.p1.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1.d ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1.d ${OBJECTDIR}/MCAL_layer/TIMER1/hal_timer1.p1.d ${OBJECTDIR}/MCAL_layer/TIMER2/hal_timer2.p1.d ${OBJECTDIR}/MCAL_layer/TIMER3/hal_timer3.p1.d ${OBJECTDIR}/MCAL_layer/USART/hal_usart.p1.d ${OBJECTDIR}/MCAL_layer/device_config.p1.d ${OBJECTDIR}/application.p1.d ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ecu_button.p1 ${OBJECTDIR}/ecu_dc_motor.p1 ${OBJECTDIR}/ECU_layer/keypad/ecu_keypad.p1 ${OBJECTDIR}/ECU_layer/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/ECU_layer/LED/ecu_led.p1 ${OBJECTDIR}/ECU_layer/relay/ecu_relay.p1 ${OBJECTDIR}/ECU_layer/seven_segment/ecu_seven_segment.p1 ${OBJECTDIR}/ECU_layer/ecu_layer_init.p1 ${OBJECTDIR}/MCAL_layer/ADC/hal_adc.p1 ${OBJECTDIR}/hal_ccp.p1 ${OBJECTDIR}/MCAL_layer/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL_layer/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_internal_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_external_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1 ${OBJECTDIR}/MCAL_layer/TIMER1/hal_timer1.p1 ${OBJECTDIR}/MCAL_layer/TIMER2/hal_timer2.p1 ${OBJECTDIR}/MCAL_layer/TIMER3/hal_timer3.p1 ${OBJECTDIR}/MCAL_layer/USART/hal_usart.p1 ${OBJECTDIR}/MCAL_layer/device_config.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1
+OBJECTFILES=${OBJECTDIR}/ecu_button.p1 ${OBJECTDIR}/ecu_dc_motor.p1 ${OBJECTDIR}/ECU_layer/keypad/ecu_keypad.p1 ${OBJECTDIR}/ECU_layer/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/ECU_layer/LED/ecu_led.p1 ${OBJECTDIR}/ECU_layer/relay/ecu_relay.p1 ${OBJECTDIR}/ECU_layer/seven_segment/ecu_seven_segment.p1 ${OBJECTDIR}/ECU_layer/ecu_layer_init.p1 ${OBJECTDIR}/MCAL_layer/ADC/hal_adc.p1 ${OBJECTDIR}/hal_ccp.p1 ${OBJECTDIR}/MCAL_layer/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL_layer/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_internal_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_external_interrupt.p1 ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1 ${OBJECTDIR}/MCAL_layer/TIMER1/hal_timer1.p1 ${OBJECTDIR}/MCAL_layer/TIMER2/hal_timer2.p1 ${OBJECTDIR}/MCAL_layer/TIMER3/hal_timer3.p1 ${OBJECTDIR}/MCAL_layer/USART/hal_usart.p1 ${OBJECTDIR}/MCAL_layer/device_config.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1
 
 # Source Files
-SOURCEFILES=ecu_button.c ecu_dc_motor.c ECU_layer/keypad/ecu_keypad.c ECU_layer/LCD/ecu_chr_lcd.c ECU_layer/LED/ecu_led.c ECU_layer/relay/ecu_relay.c ECU_layer/seven_segment/ecu_seven_segment.c ECU_layer/ecu_layer_init.c MCAL_layer/ADC/hal_adc.c hal_ccp.c MCAL_layer/EEPROM/hal_eeprom.c MCAL_layer/GPIO/hal_gpio.c MCAL_layer/Interrupt/mcal_internal_interrupt.c MCAL_layer/Interrupt/mcal_external_interrupt.c MCAL_layer/Interrupt/mcal_interrupt_manager.c MCAL_layer/TIMER0/hal_timer0.c MCAL_layer/TIMER1/hal_timer1.c MCAL_layer/TIMER2/hal_timer2.c MCAL_layer/TIMER3/hal_timer3.c MCAL_layer/USART/hal_usart.c MCAL_layer/device_config.c application.c MCAL_layer/SPI/hal_spi.c
+SOURCEFILES=ecu_button.c ecu_dc_motor.c ECU_layer/keypad/ecu_keypad.c ECU_layer/LCD/ecu_chr_lcd.c ECU_layer/LED/ecu_led.c ECU_layer/relay/ecu_relay.c ECU_layer/seven_segment/ecu_seven_segment.c ECU_layer/ecu_layer_init.c MCAL_layer/ADC/hal_adc.c hal_ccp.c MCAL_layer/EEPROM/hal_eeprom.c MCAL_layer/GPIO/hal_gpio.c MCAL_layer/Interrupt/mcal_internal_interrupt.c MCAL_layer/Interrupt/mcal_external_interrupt.c MCAL_layer/Interrupt/mcal_interrupt_manager.c MCAL_layer/SPI/hal_spi.c MCAL_layer/TIMER0/hal_timer0.c MCAL_layer/TIMER1/hal_timer1.c MCAL_layer/TIMER2/hal_timer2.c MCAL_layer/TIMER3/hal_timer3.c MCAL_layer/USART/hal_usart.c MCAL_layer/device_config.c application.c MCAL_layer/I2C/hal_i2c.c
 
 
 
@@ -208,6 +208,14 @@ ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1: MCAL_layer/Interrup
 	@-${MV} ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1: MCAL_layer/SPI/hal_spi.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL_layer/SPI" 
+	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 MCAL_layer/SPI/hal_spi.c 
+	@-${MV} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.d ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1: MCAL_layer/TIMER0/hal_timer0.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/MCAL_layer/TIMER0" 
 	@${RM} ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1.d 
@@ -264,13 +272,13 @@ ${OBJECTDIR}/application.p1: application.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/application.d ${OBJECTDIR}/application.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/application.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1: MCAL_layer/SPI/hal_spi.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/MCAL_layer/SPI" 
-	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
-	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 MCAL_layer/SPI/hal_spi.c 
-	@-${MV} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.d ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1: MCAL_layer/I2C/hal_i2c.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL_layer/I2C" 
+	@${RM} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1 MCAL_layer/I2C/hal_i2c.c 
+	@-${MV} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.d ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/ecu_button.p1: ecu_button.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -393,6 +401,14 @@ ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1: MCAL_layer/Interrup
 	@-${MV} ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.d ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/Interrupt/mcal_interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1: MCAL_layer/SPI/hal_spi.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL_layer/SPI" 
+	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 MCAL_layer/SPI/hal_spi.c 
+	@-${MV} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.d ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1: MCAL_layer/TIMER0/hal_timer0.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/MCAL_layer/TIMER0" 
 	@${RM} ${OBJECTDIR}/MCAL_layer/TIMER0/hal_timer0.p1.d 
@@ -449,13 +465,13 @@ ${OBJECTDIR}/application.p1: application.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/application.d ${OBJECTDIR}/application.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/application.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1: MCAL_layer/SPI/hal_spi.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/MCAL_layer/SPI" 
-	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
-	@${RM} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1 MCAL_layer/SPI/hal_spi.c 
-	@-${MV} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.d ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/SPI/hal_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1: MCAL_layer/I2C/hal_i2c.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL_layer/I2C" 
+	@${RM} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1 MCAL_layer/I2C/hal_i2c.c 
+	@-${MV} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.d ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL_layer/I2C/hal_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
