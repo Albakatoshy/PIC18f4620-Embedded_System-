@@ -1,0 +1,26 @@
+build/default/production/main.p1:  \
+main.c  \
+mcc_generated_files/system/system.h  \
+mcc_generated_files/system/config_bits.h  \
+mcc_generated_files/system/../system/clock.h  \
+mcc_generated_files/system/../system/pins.h  \
+mcc_generated_files/system/../uart/eusart.h  \
+mcc_generated_files/system/../uart/../system/system.h  \
+mcc_generated_files/system/../uart/uart_drv_interface.h  \
+mcc_generated_files/system/../uart/uart_types.h  \
+mcc_generated_files/system/../i2c_host/mssp.h  \
+mcc_generated_files/system/../i2c_host/i2c_host_event_types.h  \
+mcc_generated_files/system/../i2c_host/i2c_host_types.h  \
+mcc_generated_files/system/../i2c_host/i2c_host_interface.h  \
+mcc_generated_files/system/../nvm/nvm.h  \
+mcc_generated_files/system/../system/interrupt.h  \
+AECUL_Modules/RealTimeClockDS1307/RealTimeClockDS1307.h  \
+AECUL_Modules/RealTimeClockDS1307/../../mcc_generated_files/system/system.h  \
+AECUL_Modules/RealTimeClockDS1307/../UART_LoggingDebugData/UART_LoggingDebugData.h  \
+AECUL_Modules/RealTimeClockDS1307/../UART_LoggingDebugData/../../mcc_generated_files/uart/eusart.h  \
+AECUL_Modules/UART_LoggingDebugData/UART_LoggingDebugData.h  \
+AECUL_Modules/EEPROM_24C01C/EEPROM_24C01C.h  \
+AECUL_Modules/EEPROM_24C01C/../../mcc_generated_files/system/system.h  \
+AECUL_Modules/EEPROM_24C01C/../../mcc_generated_files/nvm/nvm.h  \
+AECUL_Modules/TempSensor_TC74/TempSensor_TC74.h  \
+AECUL_Modules/TempSensor_TC74/../../mcc_generated_files/system/system.h 
