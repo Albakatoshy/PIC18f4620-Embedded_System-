@@ -1,68 +1,103 @@
-# **PIC18F4620 Embedded System Project**
+# PIC18F4620 Embedded System Drivers & Applications
 
-This repository contains an embedded systems project developed for the **PIC18F4620** microcontroller. It demonstrates the implementation of various drivers and modules, structured according to the **Microcontroller Abstraction Layer (MCAL)** and **External Control Unit (ECU)** design patterns, ensuring modularity and scalability.
-
----
-
-## **📁 Project Structure**
-
+This repository contains a comprehensive set of drivers and embedded applications built for the **PIC18F4620** microcontroller. It includes full implementations of **MCAL (Microcontroller Abstraction Layer)** drivers, along with various **ECU (Electronic Control Unit)** drivers for external modules like LCDs, motors, sensors, and I2C devices. The goal is to provide a modular and reusable driver library for embedded systems projects.
 
 ---
 
-## **🛠 Getting Started**
+## 🔧 Layers & Architecture
 
-### **📦 Prerequisites**
+This project follows a layered architecture:
 
-Before you begin, ensure you have the following:
+- **MCAL (Microcontroller Abstraction Layer):**  
+  Fully implemented low-level drivers for all key PIC18F4620 peripherals:
+  - DIO (Digital Input/Output)
+  - Timers
+  - External Interrupts
+  - ADC
+  - I2C (Master Mode)
+  - USART
+  - EEPROM
+  - CCP (PWM and Capture)
+  - Watchdog Timer
+  - Oscillator Configuration
 
-- **MPLAB X IDE** – For project development and debugging  
-- **XC8 Compiler** – For compiling code for the PIC18F4620  
-- **PIC18F4620 Microcontroller** – Target device  
-- **PICkit Programmer (e.g., PICkit 3)** – For uploading the compiled hex file to the microcontroller  
-
----
-
-## **🔧 Layers Overview**
-
-### **MCAL Layer**
-- Contains low-level drivers that directly interface with the **PIC18F4620 hardware peripherals** (e.g., GPIO, Timers, ADC).
-- Each driver is modular and reusable across different projects.
-
-### **ECU Layer**
-- Built on top of the MCAL layer.
-- Includes higher-level modules like **LED**, **button**, and **DC motor control**, encapsulating peripheral interactions.
-
-### **Application Layer**
-- Defined in `application.c` and `application.h`.
-- Implements the actual logic and flow of the system using MCAL and ECU modules.
+- **ECUAL (ECU Abstraction Layer):**  
+  High-level drivers built on top of MCAL to interface with real-world modules.
 
 ---
 
-## **🚀 Deployment**
+## 📦 Included ECU Drivers
 
-1. Clone the repository.
-2. Open the project in **MPLAB X IDE**.
-3. Build the project using the **XC8 compiler**.
-4. Use **PICkit 3** or compatible programmer to upload the `.hex` file located in the `dist/` folder to your **PIC18F4620**.
+The repository includes complete drivers for several widely used peripheral modules:
+
+### ✅ LCD (16x2 Character LCD)
+- 4-bit mode operation
+- Functions to write characters, strings, and custom symbols
+
+### ✅ DC Motor Driver
+- H-Bridge control via GPIO or PWM
+- Functions for clockwise, counter-clockwise, and stop
+
+### ✅ RTC – DS1307 (Real-Time Clock)
+- I2C-based real-time clock driver
+- Read/write time and date
+- BCD-to-decimal conversion included
+
+### ✅ EEPROM – 1K Serial (5V I2C)
+- Support for 24C01C and compatible I2C EEPROMs
+- Byte-level read/write operations with address handling
+
+### ✅ Temperature Sensor – TC74
+- I2C digital temperature sensor
+- Read current temperature in °C
+
+### ✅ Additional Drivers
+- 7-Segment Display (via BCD or GPIO)
+- Push Button with debounce logic
+- Keypad scanning (4x4)
+- Buzzer control
+- LED control
 
 ---
 
-## **🧪 Testing & Simulation**
+## 🛠️ Tools Used
 
-- The `sim/` folder includes simulation files for testing in environments like **MPLAB SIM**.
-- The `test/` directory contains **unit tests** to verify the behavior of individual modules and layers.
-
----
-
-## **📜 License**
-
-This project is licensed under the **MIT License**. See `LICENSE` file for details.
+- **Microcontroller:** PIC18F4620  
+- **IDE:** MPLAB X IDE  
+- **Compiler:** MPLAB XC8  
+- **Simulation:** Proteus ISIS  
+- **Language:** C
 
 ---
 
-## **👨‍💻 Author**
+## 🚀 How to Run
 
-- **Abdelrahman Basyouni** – [GitHub Profile](https://github.com/Albakatoshy)
+1. Open the desired project in **MPLAB X IDE**.
+2. Compile using the **XC8 compiler**.
+3. Flash the hex file to the **PIC18F4620** using a programmer (e.g. PICkit 3/4).
+4. For simulation, open the associated `.dsn` file in **Proteus**.
 
 ---
 
+## 🎯 Purpose
+
+This repository is intended to:
+- Help learners understand layered driver architecture
+- Provide reusable and tested drivers for common ECUs
+- Support quick prototyping and embedded project development
+
+---
+
+## ✅ Conclusion
+
+This project demonstrates a complete embedded systems development approach using the PIC18F4620. With fully implemented MCAL drivers and a wide range of tested ECU drivers, the repository serves as a robust foundation for both academic and practical embedded applications. Whether you’re a student, engineer, or hobbyist, you’ll find reusable components and real-world examples to accelerate your development.
+
+---
+
+## 📬 Contact
+
+**Author:** Abdelrahman Basyouni  
+**Email:** es-abdelrahman.Basyouni2027@alexu.edu.eg  
+**GitHub:** [Albakatoshy](https://github.com/Albakatoshy)
+
+---
